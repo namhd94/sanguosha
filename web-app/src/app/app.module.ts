@@ -9,16 +9,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CardDetailComponent } from './card-detail/card-detail.component';
+import { CardListComponent } from './card-list/card-list.component';
+import { GuideComponent } from './guide/guide.component';
+import { AppRoutingModule } from './app-routing.module';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    CardDetailComponent,
+    CardListComponent,
+    GuideComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     NgZorroAntdModule,
     FormsModule,
     HttpClientModule,
