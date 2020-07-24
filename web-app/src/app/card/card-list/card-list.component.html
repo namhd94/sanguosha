@@ -1,0 +1,27 @@
+<nz-list nzGrid>
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <nz-input-group [nzPrefix]="prefixTemplateSearch">
+        <input type="text" nz-input/>
+      </nz-input-group>
+      <ng-template #prefixTemplateSearch><i nz-icon nzType="search"></i></ng-template>
+    </div>
+  </div>
+  <div nz-row [nzGutter]="16" style="margin-top: 16px;">
+    <div nz-col [nzSpan]="4">
+      <nz-list-item nzMatchRouter>
+        <a [routerLink]="['1']">
+          <nz-card nzHoverable style="width: 240px;" [nzCover]="coverTemplate">
+            <nz-card-meta
+              nzTitle="Tư Mã Ý"
+              nzDescription="The Devil with Eyes Behind his Head"
+            ></nz-card-meta>
+          </nz-card>
+          <ng-template #coverTemplate>
+            <img alt="Tư Mã Ý" src="assets/img/sima-yi.jpg"/>
+          </ng-template>
+        </a>
+      </nz-list-item>
+    </div>
+  </div>
+</nz-list>
