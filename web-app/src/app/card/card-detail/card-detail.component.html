@@ -1,12 +1,17 @@
 <div nz-row>
   <div nz-col nzSpan="24">
-    <img alt="Tư Mã Ý" src="assets/img/sima-yi-big.jpg"/>
+    <img alt="Tư Mã Ý" src="assets/img/sima-yi-big.jpg" />
   </div>
+
 </div>
 <div nz-row>
   <div nz-col nzSpan="24">
     <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">Tu Ma Y</h3>
     <nz-list nzBordered>
+      <nz-list-item>
+        <span nz-typography><mark>Description</mark></span>
+        Ever Watchful Wolf
+      </nz-list-item>
       <nz-list-item>
         <span nz-typography><mark>Kingdom</mark></span>
         Wei
@@ -20,32 +25,8 @@
         Male
       </nz-list-item>
       <nz-list-item>
-        <span nz-typography><mark>Ruler</mark></span>
-        No
-      </nz-list-item>
-      <nz-list-item>
-        <span nz-typography><mark>KW</mark></span>
-        Yes
-      </nz-list-item>
-      <nz-list-item>
-        <span nz-typography><mark>1v1</mark></span>
-        Yes
-      </nz-list-item>
-      <nz-list-item>
-        <span nz-typography><mark>3v3</mark></span>
-        Yes
-      </nz-list-item>
-      <nz-list-item>
-        <span nz-typography><mark>4v4</mark></span>
-        No
-      </nz-list-item>
-      <nz-list-item>
-        <span nz-typography><mark>4v4</mark></span>
-        Yes
-      </nz-list-item>
-      <nz-list-item>
         <span nz-typography><mark>Expansion</mark></span>
-        [基本] Basic
+        Basic
       </nz-list-item>
     </nz-list>
   </div>
@@ -128,36 +109,25 @@
 </div>
 <div nz-row>
   <div nz-col nzSpan="24">
-    <img alt="Sat" src="assets/img/sha-big.jpg"/>
-  </div>
-</div>
-<div nz-row>
-  <div nz-col nzSpan="24">
-    <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">Sat</h3>
-    <nz-list nzBordered>
-      <nz-list-item>
-        <span nz-typography><mark>Phase</mark></span>
-        Action Phase
-      </nz-list-item>
-      <nz-list-item>
-        <span nz-typography><mark>Target</mark></span>
-        Another player within your attack range
-      </nz-list-item>
-    </nz-list>
-  </div>
-</div>
-<div nz-row>
-  <div nz-col nzSpan="24">
     <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
-      Description
+      Strength
     </h3>
     <nz-list nzBordered>
       <nz-list-item>
         <nz-list-item-meta>
           <nz-list-item-meta-description>
-            In your Action Phase: target another player within your attack
-            range; you cause 1 DMG to the target player. Limited to 1 Sha per
-            Action Phase.
+            <ul>
+              <li>Sima Yi's "Feedback" can be a powerful deterrent for other players to damage him. Characters with
+                useful
+                equipment or Peaches in their hand may be reluctant to do anything that would damage Sima Yi if they are
+                scared that Sima Yi would activate "Feedback" to take these cards.</li>
+              <li>
+                "Devil" gives Sima Yi a large amount of control of judgement cards. Zhang Jiao can only switch judgment
+                cards that are of a black suit. As a result, if Zhang Jiao is the victim of Capture, he cannot switch
+                the
+                judgment card with a heart and pass the tool card. Sima Yi does not have this problem.
+              </li>
+            </ul>
           </nz-list-item-meta-description>
         </nz-list-item-meta>
       </nz-list-item>
@@ -167,24 +137,47 @@
 <div nz-row>
   <div nz-col nzSpan="24">
     <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
-      Clarification
+      Weakness
     </h3>
     <nz-list nzBordered>
       <nz-list-item>
         <nz-list-item-meta>
           <nz-list-item-meta-description>
             <ul>
+              <li>As with all other characters with three units of health, Sima Yi is fragile. His first power is a good
+                deterrent, but if your enemies really want you to die, they will gladly accept the consequences of
+                hurting you.</li>
               <li>
-                At the beginning of the game, the initial attack range of all
-                players is 1 by default.
+                As stated in the 'Clarification' section, one way to get around Sima's power is to do more than one unit
+                of damage in a particular instance, such as attacking him with Wine. Strategies that involve doing more
+                than one unit of damage in one occasion reduce the viability of "Feedback" and significantly reduce his
+                long-term chances of survival, as he can only take one card.
               </li>
-              <li>You can only use 1 Sha per Action Phase.</li>
-              <li>You can use it in response to Coerce.</li>
-              <li>You can play it in response to Duel.</li>
-              <li>You can play it in response to Barbarians.</li>
+            </ul>
+          </nz-list-item-meta-description>
+        </nz-list-item-meta>
+      </nz-list-item>
+    </nz-list>
+  </div>
+</div>
+<div nz-row>
+  <div nz-col nzSpan="24">
+    <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
+      Notable Combinations
+    </h3>
+    <nz-list nzBordered>
+      <nz-list-item>
+        <nz-list-item-meta>
+          <nz-list-item-meta-description>
+            <ul>
+              <li>Zhen Ji - Zhen Ji's "River Goddess" relies upon a series of judgments. If a red card shows up in this
+                ability, Sima Yi can come to the rescue and replace it with a black card via "Devil." The red card is
+                discarded, and Sima Yi's black card goes into Zhen Ji's hand. She then continues with her power. Sima Yi
+                can continue to do this as often as he likes.</li>
               <li>
-                You can use/play it in response to some character abilities,
-                such as Liu Bei's "Rouse".
+                Da Qiao - Da Qiao's "Country Scene" lets her use Capture on as many people as she wants. If Sima is on
+                her team, he can be sure that her victims fail their Capture judgment. If they are not as friendly, Sima
+                can protect all of his team from falling victim to her.
               </li>
             </ul>
           </nz-list-item-meta-description>
