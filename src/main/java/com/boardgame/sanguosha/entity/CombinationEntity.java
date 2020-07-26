@@ -11,40 +11,32 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
- * The Class ClarificationEntity.
+ * The Class CombinationEntity.
  *
  * @author namhd94
  */
 @Entity
-@Table(name = "clarification")
-public class ClarificationEntity {
-
+@Table(name = "combination")
+public class CombinationEntity {
+	
 	/** The id. */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
-
+	
 	/** The content. */
 	@Column(name = "content")
 	private String content;
-
-	/** The strength. */
-	@Column(name = "strength")
-	private String strength;
-
-	/** The weakness. */
-	@Column(name = "weakness")
-	private String weakness;
-
+	
 	/**
-	 * The repair plan that the entry belongs to.
-	 * 
-	 */
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "card_id", referencedColumnName = "id")
-	private CardEntity card;
-
+     * The repair plan that the entry belongs to.
+     * 
+     */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "card_id", referencedColumnName = "id")
+    private CardEntity card;
+	
 	/**
 	 * Gets the id.
 	 *
@@ -53,7 +45,7 @@ public class ClarificationEntity {
 	public int getId() {
 		return id;
 	}
-
+	
 	/**
 	 * Sets the id.
 	 *
@@ -82,42 +74,6 @@ public class ClarificationEntity {
 	}
 
 	/**
-	 * Gets the strength.
-	 *
-	 * @return the strength
-	 */
-	public String getStrength() {
-		return strength;
-	}
-
-	/**
-	 * Sets the strength.
-	 *
-	 * @param strength the strength to set
-	 */
-	public void setStrength(String strength) {
-		this.strength = strength;
-	}
-
-	/**
-	 * Gets the weakness.
-	 *
-	 * @return the weakness
-	 */
-	public String getWeakness() {
-		return weakness;
-	}
-
-	/**
-	 * Sets the weakness.
-	 *
-	 * @param weakness the weakness to set
-	 */
-	public void setWeakness(String weakness) {
-		this.weakness = weakness;
-	}
-
-	/**
 	 * Gets the card.
 	 *
 	 * @return the card
@@ -134,5 +90,5 @@ public class ClarificationEntity {
 	public void setCard(CardEntity card) {
 		this.card = card;
 	}
-
+	
 }

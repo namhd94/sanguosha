@@ -26,6 +26,12 @@ public class Card {
 
 	/** The clarification. */
 	private Clarification clarification;
+	
+	/** The combination. */
+	private Combination combination;
+	
+	/** The information. */
+	private Information information;
 
 	/**
 	 * Gets the id.
@@ -133,6 +139,42 @@ public class Card {
 	 */
 	public void setClarification(Clarification clarification) {
 		this.clarification = clarification;
+	}
+
+	/**
+	 * Gets the combination.
+	 *
+	 * @return the combination
+	 */
+	public Combination getCombination() {
+		return combination;
+	}
+
+	/**
+	 * Sets the combination.
+	 *
+	 * @param combination the combination to set
+	 */
+	public void setCombination(Combination combination) {
+		this.combination = combination;
+	}
+
+	/**
+	 * Gets the information.
+	 *
+	 * @return the information
+	 */
+	public Information getInformation() {
+		return information;
+	}
+
+	/**
+	 * Sets the information.
+	 *
+	 * @param information the information to set
+	 */
+	public void setInformation(Information information) {
+		this.information = information;
 	}
 
 }

@@ -22,3 +22,21 @@ VALUES (
 , 'As with all other characters with three units of health, Sima Yi is fragile. His first power is a good deterrent, but if your enemies really want you to die, they will gladly accept the consequences of hurting you.'
 , 1
 );
+
+-- Combination
+INSERT INTO public.combination(content, card_id)
+VALUES (
+'Multiple Damage Dealers (e.g. Xu Chu) - These characters can do two units of damage easily, exploiting Sima''s ''per instance'' stealing ability.'
+, 1
+);
+
+-- Combination
+INSERT INTO public.information(kingdom, health, gender, range, expansion, card_id)
+VALUES (
+'Nguy'
+, 3
+, 'Nam'
+, null
+, 'Co ban'
+, 1
+);
