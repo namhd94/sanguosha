@@ -7,4 +7,5 @@ export class Card {
   description: string;
   clarification: Clarification;
   skill: Skill;
+  type: string;
 }
