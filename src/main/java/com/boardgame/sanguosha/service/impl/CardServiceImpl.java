@@ -82,23 +82,21 @@ public class CardServiceImpl implements CardService {
 	/**
 	 * Gets the card.
 	 *
-	 * @param card the card
+	 * @param id the id
 	 * @return the card
 	 */
 	@Override
-	public Card getCard(final Card card) {
-		if (card == null) {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "card is null");
-		}
-		final Optional<CardEntity> entity = cardRepository.findById(card.getId());
+	public Card getCard(final Integer id) {
+		Card card = new Card();
+		final Optional<CardEntity> entity = cardRepository.findById(id);
 		if (!entity.isPresent()) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "card is not found");
 		}
 
-		final List<SkillEntity> skillEntities = skillRepository.findByCard(card.getId());
-		final ClarificationEntity clarificationEntity = clarificationRepository.findByCard(card.getId());
-		final CombinationEntity combinationEntity = combinationRepository.findByCard(card.getId());
-		final InformationEntity informationEntity = informationRepository.findByCard(card.getId());
+		final List<SkillEntity> skillEntities = skillRepository.findByCard(id);
+		final ClarificationEntity clarificationEntity = clarificationRepository.findByCard(id);
+		final CombinationEntity combinationEntity = combinationRepository.findByCard(id);
+		final InformationEntity informationEntity = informationRepository.findByCard(id);
 
 		if (skillEntities == null || clarificationEntity == null || combinationEntity == null
 				|| informationEntity == null) {
@@ -110,6 +108,7 @@ public class CardServiceImpl implements CardService {
 			final Clarification clarification = MapperFactory.map(ClarificationMapper.class).toDto(clarificationEntity);
 			final Information information = MapperFactory.map(InformationMapper.class).toDto(informationEntity);
 			final Combination combination = MapperFactory.map(CombinationMapper.class).toDto(combinationEntity);
+			card = MapperFactory.map(CardMapper.class).toDto(entity.get());
 			card.setSkills(skills);
 			card.setClarification(clarification);
 			card.setInformation(information);

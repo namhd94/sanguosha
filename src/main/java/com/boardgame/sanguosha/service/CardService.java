@@ -22,8 +22,8 @@ public interface CardService {
 	/**
 	 * Gets the card.
 	 *
-	 * @param card the card
+	 * @param id the id
 	 * @return the card
 	 */
-	Card getCard(final Card card);
+	Card getCard(final Integer id);
 }

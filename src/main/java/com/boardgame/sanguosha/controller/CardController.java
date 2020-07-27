@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,12 +38,12 @@ public class CardController {
 	/**
 	 * Gets the card detail.
 	 *
-	 * @param card the card
+	 * @param id the id
 	 * @return the card detail
 	 */
-	@GetMapping("/detail")
-	public Card getCardDetail(@RequestBody final Card card) {
-		return cardService.getCard(card);
+	@GetMapping("/detail/{id}")
+	public Card getCardDetail(@PathVariable(value = "id") final Integer id) {
+		return cardService.getCard(id);
 	}
 	
 }

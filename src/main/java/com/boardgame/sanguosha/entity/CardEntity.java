@@ -29,6 +29,10 @@ public class CardEntity {
 	/** The description. */
 	@Column(name = "description")
 	private String description;
+	
+	/** The image. */
+	@Column(name = "image")
+	private String image;
 
 	/** The type. */
 	@Column(name = "type")
@@ -86,6 +90,24 @@ public class CardEntity {
 	 */
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	/**
+	 * Gets the image.
+	 *
+	 * @return the image
+	 */
+	public String getImage() {
+		return image;
+	}
+
+	/**
+	 * Sets the image.
+	 *
+	 * @param image the image to set
+	 */
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	/**

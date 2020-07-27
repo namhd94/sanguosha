@@ -1,5 +1,6 @@
+-- Tu Ma Y
 -- Card
-INSERT INTO public.card(name, description, type) VALUES ('Tư Mã Ý', 'Lang Cố Chi Quỷ', 'nguy');
+INSERT INTO public.card(name, description, image, type) VALUES ('Tư Mã Ý', 'Lang Cố Chi Quỷ', 'assets/img/sima-yi.jpg', 'nguy');
 	
 -- Skill
 INSERT INTO public.skill(name, description, card_id)

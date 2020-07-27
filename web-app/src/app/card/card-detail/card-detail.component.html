@@ -1,188 +1,132 @@
 <div nz-row>
   <div nz-col nzSpan="24">
-    <img alt="Tư Mã Ý" src="assets/img/sima-yi-big.jpg" />
-  </div>
-
-</div>
-<div nz-row>
-  <div nz-col nzSpan="24">
-    <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">Tu Ma Y</h3>
-    <nz-list nzBordered>
-      <nz-list-item>
-        <span nz-typography><mark>Description</mark></span>
-        Ever Watchful Wolf
-      </nz-list-item>
-      <nz-list-item>
-        <span nz-typography><mark>Kingdom</mark></span>
-        Wei
-      </nz-list-item>
-      <nz-list-item>
-        <span nz-typography><mark>Health</mark></span>
-        3
-      </nz-list-item>
-      <nz-list-item>
-        <span nz-typography><mark>Gender</mark></span>
-        Male
-      </nz-list-item>
-      <nz-list-item>
-        <span nz-typography><mark>Expansion</mark></span>
-        Basic
-      </nz-list-item>
-    </nz-list>
+    <img alt="{{card.name}}" src="{{card.image}}" />
   </div>
 </div>
-<div nz-row>
-  <div nz-col nzSpan="24">
-    <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">Skills</h3>
-    <nz-list nzBordered>
-      <nz-list-item>
-        <nz-list-item-meta>
-          <nz-list-item-meta-title>
-            <h4>Retaliation</h4>
-          </nz-list-item-meta-title>
-          <nz-list-item-meta-description>
-            After you suffer DMG: you can take 1 card from the damage source.
-          </nz-list-item-meta-description>
-        </nz-list-item-meta>
-      </nz-list-item>
-      <nz-list-item>
-        <nz-list-item-meta>
-          <nz-list-item-meta-title>
-            <h4>Demonic Talent</h4>
-          </nz-list-item-meta-title>
-          <nz-list-item-meta-description>
-            When a player performs a judgement, before it takes effect: you can
-            play a hand card. It becomes the judgement result.
-          </nz-list-item-meta-description>
-        </nz-list-item-meta>
-      </nz-list-item>
-    </nz-list>
+<div *ngIf="card?.information">
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">{{card.name}}</h3>
+      <nz-list nzBordered>
+        <nz-list-item>
+          <span nz-typography><mark>Description</mark></span>
+          {{card.description}}
+        </nz-list-item>
+        <nz-list-item>
+          <span nz-typography><mark>Kingdom</mark></span>
+          {{card.information.kingdom}}
+        </nz-list-item>
+        <nz-list-item>
+          <span nz-typography><mark>Health</mark></span>
+          {{card.information.health}}
+        </nz-list-item>
+        <nz-list-item>
+          <span nz-typography><mark>Gender</mark></span>
+          {{card.information.gender}}
+        </nz-list-item>
+        <nz-list-item>
+          <span nz-typography><mark>Expansion</mark></span>
+          {{card.information.expansion}}
+        </nz-list-item>
+      </nz-list>
+    </div>
   </div>
 </div>
-<div nz-row>
-  <div nz-col nzSpan="24">
-    <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
-      Clarification
-    </h3>
-    <nz-list nzBordered>
-      <nz-list-item>
-        <nz-list-item-meta>
-          <nz-list-item-meta-title>
-            <h4>Retaliation</h4>
-          </nz-list-item-meta-title>
-          <nz-list-item-meta-description>
-            <ul>
-              <li>You can take equipped cards.</li>
-              <li>
-                You must be saved from the brink of death in order to activate
-                this ability.
-              </li>
-              <li>
-                If you suffer more than 1 damage per instance, you can only
-                activate this ability once.
-              </li>
-            </ul>
-          </nz-list-item-meta-description>
-        </nz-list-item-meta>
-      </nz-list-item>
-      <nz-list-item>
-        <nz-list-item-meta>
-          <nz-list-item-meta-title>
-            <h4>Demonic Talent</h4>
-          </nz-list-item-meta-title>
-          <nz-list-item-meta-description>
-            <ul>
-              <li>You can't take the original judgement card.</li>
-              <li>
-                If there are multiple judgement tinkerers in the game, the order
-                in which they change the judgement result is determined by their
-                sequence in the gameplay, starting with the turn player; each
-                judgement tinkerer only has one chance to change the judgement
-                result.
-              </li>
-            </ul>
-          </nz-list-item-meta-description>
-        </nz-list-item-meta>
-      </nz-list-item>
-    </nz-list>
+<div *ngIf="card?.skill">
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">Skills</h3>
+      <nz-list nzBordered>
+        <nz-list-item *ngFor="let skill of card.skill">
+          <nz-list-item-meta>
+            <nz-list-item-meta-title>
+              <h4>{{skill.name}}</h4>
+            </nz-list-item-meta-title>
+            <nz-list-item-meta-description>
+              {{skill.description}}
+            </nz-list-item-meta-description>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </nz-list>
+    </div>
+  </div>
+</div> 
+<div *ngIf="card?.clarification">
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
+        Clarification
+      </h3>
+      <nz-list nzBordered>
+        <nz-list-item>
+          <nz-list-item-meta>
+            <nz-list-item-meta-title>
+              <h4>Retaliation</h4>
+            </nz-list-item-meta-title>
+            <nz-list-item-meta-description>
+              <ul>
+                <li>{{card.clarification.content}}</li>
+              </ul>
+            </nz-list-item-meta-description>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </nz-list>
+    </div>
+  </div>
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
+        Strength
+      </h3>
+      <nz-list nzBordered>
+        <nz-list-item>
+          <nz-list-item-meta>
+            <nz-list-item-meta-description>
+              <ul>
+                <li>{{card.clarification.strength}}</li>
+              </ul>
+            </nz-list-item-meta-description>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </nz-list>
+    </div>
+  </div>
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
+        Weakness
+      </h3>
+      <nz-list nzBordered>
+        <nz-list-item>
+          <nz-list-item-meta>
+            <nz-list-item-meta-description>
+              <ul>
+                <li>{{card.clarification.weakness}}</li>
+              </ul>
+            </nz-list-item-meta-description>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </nz-list>
+    </div>
   </div>
 </div>
-<div nz-row>
-  <div nz-col nzSpan="24">
-    <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
-      Strength
-    </h3>
-    <nz-list nzBordered>
-      <nz-list-item>
-        <nz-list-item-meta>
-          <nz-list-item-meta-description>
-            <ul>
-              <li>Sima Yi's "Feedback" can be a powerful deterrent for other players to damage him. Characters with
-                useful
-                equipment or Peaches in their hand may be reluctant to do anything that would damage Sima Yi if they are
-                scared that Sima Yi would activate "Feedback" to take these cards.</li>
-              <li>
-                "Devil" gives Sima Yi a large amount of control of judgement cards. Zhang Jiao can only switch judgment
-                cards that are of a black suit. As a result, if Zhang Jiao is the victim of Capture, he cannot switch
-                the
-                judgment card with a heart and pass the tool card. Sima Yi does not have this problem.
-              </li>
-            </ul>
-          </nz-list-item-meta-description>
-        </nz-list-item-meta>
-      </nz-list-item>
-    </nz-list>
-  </div>
-</div>
-<div nz-row>
-  <div nz-col nzSpan="24">
-    <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
-      Weakness
-    </h3>
-    <nz-list nzBordered>
-      <nz-list-item>
-        <nz-list-item-meta>
-          <nz-list-item-meta-description>
-            <ul>
-              <li>As with all other characters with three units of health, Sima Yi is fragile. His first power is a good
-                deterrent, but if your enemies really want you to die, they will gladly accept the consequences of
-                hurting you.</li>
-              <li>
-                As stated in the 'Clarification' section, one way to get around Sima's power is to do more than one unit
-                of damage in a particular instance, such as attacking him with Wine. Strategies that involve doing more
-                than one unit of damage in one occasion reduce the viability of "Feedback" and significantly reduce his
-                long-term chances of survival, as he can only take one card.
-              </li>
-            </ul>
-          </nz-list-item-meta-description>
-        </nz-list-item-meta>
-      </nz-list-item>
-    </nz-list>
-  </div>
-</div>
-<div nz-row>
-  <div nz-col nzSpan="24">
-    <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
-      Notable Combinations
-    </h3>
-    <nz-list nzBordered>
-      <nz-list-item>
-        <nz-list-item-meta>
-          <nz-list-item-meta-description>
-            <ul>
-              <li>Zhen Ji - Zhen Ji's "River Goddess" relies upon a series of judgments. If a red card shows up in this
-                ability, Sima Yi can come to the rescue and replace it with a black card via "Devil." The red card is
-                discarded, and Sima Yi's black card goes into Zhen Ji's hand. She then continues with her power. Sima Yi
-                can continue to do this as often as he likes.</li>
-              <li>
-                Da Qiao - Da Qiao's "Country Scene" lets her use Capture on as many people as she wants. If Sima is on
-                her team, he can be sure that her victims fail their Capture judgment. If they are not as friendly, Sima
-                can protect all of his team from falling victim to her.
-              </li>
-            </ul>
-          </nz-list-item-meta-description>
-        </nz-list-item-meta>
-      </nz-list-item>
-    </nz-list>
+<div *ngIf="card?.combination">
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
+        Notable Combinations
+      </h3>
+      <nz-list nzBordered>
+        <nz-list-item>
+          <nz-list-item-meta>
+            <nz-list-item-meta-description>
+              <ul>
+                <li>{{card.combination.content}}</li>
+              </ul>
+            </nz-list-item-meta-description>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </nz-list>
+    </div>
   </div>
 </div>

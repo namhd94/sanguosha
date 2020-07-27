@@ -7,6 +7,7 @@ export class Card {
   id: number;
   name: string;
   description: string;
+  image: string;
   information: Information;
   clarification: Clarification;
   combination: Combination;

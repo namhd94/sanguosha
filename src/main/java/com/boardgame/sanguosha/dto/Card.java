@@ -17,6 +17,9 @@ public class Card {
 
 	/** The description. */
 	private String description;
+	
+	/** The image. */
+	private String image;
 
 	/** The type. */
 	private String type;
@@ -85,6 +88,24 @@ public class Card {
 	 */
 	public void setDescription(String description) {
 		this.description = description;
+	}		
+	
+	/**
+	 * Gets the image.
+	 *
+	 * @return the image
+	 */
+	public String getImage() {
+		return image;
+	}
+
+	/**
+	 * Sets the image.
+	 *
+	 * @param image the image to set
+	 */
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	/**

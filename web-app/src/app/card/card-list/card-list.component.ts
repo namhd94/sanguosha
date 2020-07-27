@@ -14,6 +14,10 @@ export class CardListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.reloadData();
+  }
+
+  reloadData(): void {
     this.cardService.getCards('nguy').subscribe(cards => {
       this.cards = cards;
     });
