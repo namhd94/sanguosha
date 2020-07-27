@@ -1,4 +1,6 @@
+import { CardService } from './../card.service';
 import {Component, OnInit} from '@angular/core';
+import { Card } from '../model/card.model';
 
 @Component({
   selector: 'app-card-list',
@@ -7,10 +9,14 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CardListComponent implements OnInit {
 
-  constructor() {
+  cards: Card[];
+  constructor(private cardService: CardService) {
   }
 
   ngOnInit(): void {
+    this.cardService.getCards('nguy').subscribe(cards => {
+      this.cards = cards;
+    });
   }
 
 }
