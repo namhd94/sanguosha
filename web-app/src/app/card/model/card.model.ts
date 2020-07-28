@@ -1,6 +1,5 @@
 import {Clarification} from './clarification.model';
 import {Skill} from './skill.model';
-import { Combination } from './combination.model';
 import { Information } from './information.model';
 
 export class Card {
@@ -11,7 +10,6 @@ export class Card {
   image: string;
   information: Information;
   clarifications: Clarification;
-  combination: Combination;
   skills: Skill;
   type: string;
 }

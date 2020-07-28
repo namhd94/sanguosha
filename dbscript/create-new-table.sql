@@ -62,27 +62,7 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.clarification
     OWNER to namhd94;
--- Table: public.combination
-
-CREATE TABLE public.combination
-(
-    id serial,
-    content character varying(1000) COLLATE pg_catalog."default" NOT NULL,
-    card_name character varying(16) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT combination_pkey PRIMARY KEY (id),
-    CONSTRAINT fk_combination_card_name FOREIGN KEY (card_name)
-        REFERENCES public.card (name) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
-        NOT VALID
-)
-WITH (
-    OIDS = FALSE
-)
-TABLESPACE pg_default;
-
-ALTER TABLE public.combination
-    OWNER to namhd94;
+    
 -- Table: public.information
 
 CREATE TABLE public.information

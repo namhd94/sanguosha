@@ -62,7 +62,7 @@
           <nz-list-item-meta>
             <nz-list-item-meta-description>
               <ul *ngFor="let clarification of card.clarifications">
-                <li *ngIf="clarification.type == 1"><div [innerHTML]="clarification.content"></div></li>
+                <li *ngIf="clarification.type == 1">{{clarification.content}}</li>
               </ul>
             </nz-list-item-meta-description>
           </nz-list-item-meta>
@@ -80,7 +80,7 @@
           <nz-list-item-meta>
             <nz-list-item-meta-description>
               <ul *ngFor="let clarification of card.clarifications">
-                <li *ngIf="clarification.type == 2"><div [innerHTML]="clarification.content"></div></li>
+                <li *ngIf="clarification.type == 2">{{clarification.content}}</li>
               </ul>
             </nz-list-item-meta-description>
           </nz-list-item-meta>
@@ -98,7 +98,7 @@
           <nz-list-item-meta>
             <nz-list-item-meta-description>
               <ul *ngFor="let clarification of card.clarifications">
-                <li *ngIf="clarification.type == 3"><div [innerHTML]="clarification.content"></div></li>
+                <li *ngIf="clarification.type == 3">{{clarification.content}}</li>
               </ul>
             </nz-list-item-meta-description>
           </nz-list-item-meta>
@@ -106,8 +106,6 @@
       </nz-list>
     </div>
   </div>
-</div>
-<div *ngIf="card?.combination">
   <div nz-row>
     <div nz-col nzSpan="24">
       <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
@@ -117,8 +115,8 @@
         <nz-list-item>
           <nz-list-item-meta>
             <nz-list-item-meta-description>
-              <ul>
-                <li>{{card.combination.content}}</li>
+              <ul *ngFor="let clarification of card.clarifications">
+                <li *ngIf="clarification.type == 4">{{clarification.content}}</li>
               </ul>
             </nz-list-item-meta-description>
           </nz-list-item-meta>

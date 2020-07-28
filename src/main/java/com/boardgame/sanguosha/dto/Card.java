@@ -34,9 +34,6 @@ public class Card {
 	/** The clarification. */
 	private List<Clarification> clarifications;
 	
-	/** The combination. */
-	private Combination combination;
-	
 	/** The information. */
 	private Information information;
 
@@ -182,24 +179,6 @@ public class Card {
 	 */
 	public void setClarifications(List<Clarification> clarifications) {
 		this.clarifications = clarifications;
-	}
-
-	/**
-	 * Gets the combination.
-	 *
-	 * @return the combination
-	 */
-	public Combination getCombination() {
-		return combination;
-	}
-
-	/**
-	 * Sets the combination.
-	 *
-	 * @param combination the combination to set
-	 */
-	public void setCombination(Combination combination) {
-		this.combination = combination;
 	}
 
 	/**
