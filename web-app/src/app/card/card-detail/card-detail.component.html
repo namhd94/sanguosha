@@ -62,7 +62,7 @@
           <nz-list-item-meta>
             <nz-list-item-meta-description>
               <ul *ngFor="let clarification of card.clarifications">
-                <li *ngIf="clarification.type == 1">{{clarification.content}}</li>
+                <li *ngIf="clarification.type == 1"><div [innerHTML]="clarification.content"></div></li>
               </ul>
             </nz-list-item-meta-description>
           </nz-list-item-meta>
@@ -80,7 +80,7 @@
           <nz-list-item-meta>
             <nz-list-item-meta-description>
               <ul *ngFor="let clarification of card.clarifications">
-                <li *ngIf="clarification.type == 2">{{clarification.content}}</li>
+                <li *ngIf="clarification.type == 2"><div [innerHTML]="clarification.content"></div></li>
               </ul>
             </nz-list-item-meta-description>
           </nz-list-item-meta>
@@ -98,7 +98,7 @@
           <nz-list-item-meta>
             <nz-list-item-meta-description>
               <ul *ngFor="let clarification of card.clarifications">
-                <li *ngIf="clarification.type == 3">{{clarification.content}}</li>
+                <li *ngIf="clarification.type == 3"><div [innerHTML]="clarification.content"></div></li>
               </ul>
             </nz-list-item-meta-description>
           </nz-list-item-meta>
@@ -116,7 +116,7 @@
           <nz-list-item-meta>
             <nz-list-item-meta-description>
               <ul *ngFor="let clarification of card.clarifications">
-                <li *ngIf="clarification.type == 4">{{clarification.content}}</li>
+                <li *ngIf="clarification.type == 4"><div [innerHTML]="clarification.content"></div></li>
               </ul>
             </nz-list-item-meta-description>
           </nz-list-item-meta>
