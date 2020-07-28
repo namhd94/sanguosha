@@ -15,12 +15,13 @@ import com.boardgame.sanguosha.entity.InformationEntity;
 @Repository
 public interface InformationRepository extends JpaRepository<InformationEntity, Integer>{
 	
+	
 	/**
-	 * Find by type.
+	 * Find by card.
 	 *
-	 * @param cardId the card id
-	 * @return the list
+	 * @param cardName the card name
+	 * @return the information entity
 	 */
-	@Query("SELECT i FROM InformationEntity i WHERE i.card.id = :cardId")
-	public InformationEntity findByCard(@Param("cardId") final Integer cardId);
+	@Query("SELECT i FROM InformationEntity i WHERE i.card.name = :cardName")
+	public InformationEntity findByCard(@Param("cardName") final String cardName);
 }

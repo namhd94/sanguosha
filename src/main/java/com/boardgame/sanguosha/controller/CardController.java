@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.boardgame.sanguosha.dto.Card;
 import com.boardgame.sanguosha.service.CardService;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class CardController.
  *
@@ -38,12 +39,12 @@ public class CardController {
 	/**
 	 * Gets the card detail.
 	 *
-	 * @param id the id
+	 * @param name the name
 	 * @return the card detail
 	 */
-	@GetMapping("/detail/{id}")
-	public Card getCardDetail(@PathVariable(value = "id") final Integer id) {
-		return cardService.getCard(id);
+	@GetMapping("/detail/{name}")
+	public Card getCardDetail(@PathVariable(value = "name") final String name) {
+		return cardService.getCard(name);
 	}
 	
 }

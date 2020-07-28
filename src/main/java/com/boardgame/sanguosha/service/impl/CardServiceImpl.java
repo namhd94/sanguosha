@@ -2,7 +2,6 @@ package com.boardgame.sanguosha.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -86,31 +85,31 @@ public class CardServiceImpl implements CardService {
 	 * @return the card
 	 */
 	@Override
-	public Card getCard(final Integer id) {
+	public Card getCard(final String name) {
 		Card card = new Card();
-		final Optional<CardEntity> entity = cardRepository.findById(id);
-		if (!entity.isPresent()) {
+		final CardEntity entity = cardRepository.findByName(name);
+		if (entity == null) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "card is not found");
 		}
 
-		final List<SkillEntity> skillEntities = skillRepository.findByCard(id);
-		final ClarificationEntity clarificationEntity = clarificationRepository.findByCard(id);
-		final CombinationEntity combinationEntity = combinationRepository.findByCard(id);
-		final InformationEntity informationEntity = informationRepository.findByCard(id);
+		final List<SkillEntity> skillEntities = skillRepository.findByCard(entity.getName());
+		final List<ClarificationEntity> clarificationEntities = clarificationRepository.findByCard(entity.getName());
+		final CombinationEntity combinationEntity = combinationRepository.findByCard(entity.getName());
+		final InformationEntity informationEntity = informationRepository.findByCard(entity.getName());
 
-		if (skillEntities == null || clarificationEntity == null || combinationEntity == null
+		if (skillEntities == null || clarificationEntities == null || combinationEntity == null
 				|| informationEntity == null) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "the extra card properties is not found");
 		}
 
 		try {
 			final List<Skill> skills = MapperFactory.map(SkillMapper.class).toDtoList(skillEntities);
-			final Clarification clarification = MapperFactory.map(ClarificationMapper.class).toDto(clarificationEntity);
+			final List<Clarification> clarifications = MapperFactory.map(ClarificationMapper.class).toDtoList(clarificationEntities);
 			final Information information = MapperFactory.map(InformationMapper.class).toDto(informationEntity);
 			final Combination combination = MapperFactory.map(CombinationMapper.class).toDto(combinationEntity);
-			card = MapperFactory.map(CardMapper.class).toDto(entity.get());
+			card = MapperFactory.map(CardMapper.class).toDto(entity);
 			card.setSkills(skills);
-			card.setClarification(clarification);
+			card.setClarifications(clarifications);
 			card.setInformation(information);
 			card.setCombination(combination);
 		} catch (Exception e) {

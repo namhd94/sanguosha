@@ -25,5 +25,5 @@ public interface CardService {
 	 * @param id the id
 	 * @return the card
 	 */
-	Card getCard(final Integer id);
+	Card getCard(final String name);
 }

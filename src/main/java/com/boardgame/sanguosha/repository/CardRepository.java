@@ -25,5 +25,14 @@ public interface CardRepository extends JpaRepository<CardEntity, Integer>{
 	 */
 	@Query("SELECT c FROM CardEntity c WHERE c.type = :type")
 	public List<CardEntity> findByType(@Param("type") final String type);
+	
+	/**
+	 * Find by type.
+	 *
+	 * @param name the name
+	 * @return the list
+	 */
+	@Query("SELECT c FROM CardEntity c WHERE c.name = :name")
+    public CardEntity findByName(@Param("name") final String name);
 
 }

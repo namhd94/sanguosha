@@ -27,8 +27,7 @@ public class ClarificationMapper extends MapperBase<Clarification, Clarification
 		final Clarification dto = new Clarification();
 		dto.setId(entity.getId());
 		dto.setContent(entity.getContent());
-		dto.setStrength(entity.getStrength());
-		dto.setWeakness(entity.getWeakness());
+		dto.setType(entity.getType());
 		return dto;
 	}
 	
@@ -43,8 +42,7 @@ public class ClarificationMapper extends MapperBase<Clarification, Clarification
 	public ClarificationEntity toEntity(final Clarification dto) throws Exception {
 		final ClarificationEntity entity = new ClarificationEntity();
 		entity.setContent(dto.getContent());
-		entity.setStrength(dto.getStrength());
-		entity.setWeakness(dto.getWeakness());
+		entity.setType(dto.getType());
 		return entity;
 	}
 }

@@ -16,11 +16,11 @@ import com.boardgame.sanguosha.entity.CombinationEntity;
 public interface CombinationRepository extends JpaRepository<CombinationEntity, Integer>{
 	
 	/**
-	 * Find by type.
+	 * Find by card.
 	 *
-	 * @param cardId the card id
-	 * @return the list
+	 * @param cardName the card name
+	 * @return the combination entity
 	 */
-	@Query("SELECT c FROM CombinationEntity c WHERE c.card.id = :cardId")
-	public CombinationEntity findByCard(@Param("cardId") final Integer cardId);
+	@Query("SELECT c FROM CombinationEntity c WHERE c.card.name = :cardName")
+	public CombinationEntity findByCard(@Param("cardName") final String cardName);
 }

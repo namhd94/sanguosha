@@ -2,6 +2,7 @@ package com.boardgame.sanguosha.dto;
 
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class Card.
  *
@@ -14,6 +15,9 @@ public class Card {
 
 	/** The name. */
 	private String name;
+	
+	/** The full name. */
+	private String fullName;
 
 	/** The description. */
 	private String description;
@@ -28,7 +32,7 @@ public class Card {
 	private List<Skill> skills;
 
 	/** The clarification. */
-	private Clarification clarification;
+	private List<Clarification> clarifications;
 	
 	/** The combination. */
 	private Combination combination;
@@ -73,6 +77,24 @@ public class Card {
 	}
 
 	/**
+	 * Gets the full name.
+	 *
+	 * @return the full name
+	 */
+	public String getFullName() {
+        return fullName;
+    }
+
+    /**
+     * Sets the full name.
+     *
+     * @param fullName the new full name
+     */
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    /**
 	 * Gets the description.
 	 *
 	 * @return the description
@@ -145,21 +167,21 @@ public class Card {
 	}
 
 	/**
-	 * Gets the clarification.
+	 * Gets the clarifications.
 	 *
 	 * @return the clarification
 	 */
-	public Clarification getClarification() {
-		return clarification;
+	public List<Clarification> getClarifications() {
+		return clarifications;
 	}
-
+	
 	/**
-	 * Sets the clarification.
+	 * Sets the clarifications.
 	 *
-	 * @param clarification the clarification to set
+	 * @param clarifications the new clarification
 	 */
-	public void setClarification(Clarification clarification) {
-		this.clarification = clarification;
+	public void setClarifications(List<Clarification> clarifications) {
+		this.clarifications = clarifications;
 	}
 
 	/**

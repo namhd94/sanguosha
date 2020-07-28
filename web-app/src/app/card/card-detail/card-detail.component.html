@@ -1,12 +1,12 @@
 <div nz-row>
   <div nz-col nzSpan="24">
-    <img alt="{{card.name}}" src="{{card.image}}" />
+    <img alt="{{card.fullName}}" src="{{card.image}}" />
   </div>
 </div>
 <div *ngIf="card?.information">
   <div nz-row>
     <div nz-col nzSpan="24">
-      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">{{card.name}}</h3>
+      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">{{card.fullName}}</h3>
       <nz-list nzBordered>
         <nz-list-item>
           <span nz-typography><mark>Description</mark></span>
@@ -32,12 +32,12 @@
     </div>
   </div>
 </div>
-<div *ngIf="card?.skill">
+<div *ngIf="card?.skills">
   <div nz-row>
     <div nz-col nzSpan="24">
       <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">Skills</h3>
       <nz-list nzBordered>
-        <nz-list-item *ngFor="let skill of card.skill">
+        <nz-list-item *ngFor="let skill of card.skills">
           <nz-list-item-meta>
             <nz-list-item-meta-title>
               <h4>{{skill.name}}</h4>
@@ -51,7 +51,7 @@
     </div>
   </div>
 </div> 
-<div *ngIf="card?.clarification">
+<div *ngIf="card?.clarifications">
   <div nz-row>
     <div nz-col nzSpan="24">
       <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
@@ -60,12 +60,9 @@
       <nz-list nzBordered>
         <nz-list-item>
           <nz-list-item-meta>
-            <nz-list-item-meta-title>
-              <h4>Retaliation</h4>
-            </nz-list-item-meta-title>
             <nz-list-item-meta-description>
-              <ul>
-                <li>{{card.clarification.content}}</li>
+              <ul *ngFor="let clarification of card.clarifications">
+                <li *ngIf="clarification.type == 1"><div [innerHTML]="clarification.content"></div></li>
               </ul>
             </nz-list-item-meta-description>
           </nz-list-item-meta>
@@ -82,8 +79,8 @@
         <nz-list-item>
           <nz-list-item-meta>
             <nz-list-item-meta-description>
-              <ul>
-                <li>{{card.clarification.strength}}</li>
+              <ul *ngFor="let clarification of card.clarifications">
+                <li *ngIf="clarification.type == 2"><div [innerHTML]="clarification.content"></div></li>
               </ul>
             </nz-list-item-meta-description>
           </nz-list-item-meta>
@@ -100,8 +97,8 @@
         <nz-list-item>
           <nz-list-item-meta>
             <nz-list-item-meta-description>
-              <ul>
-                <li>{{card.clarification.weakness}}</li>
+              <ul *ngFor="let clarification of card.clarifications">
+                <li *ngIf="clarification.type == 3"><div [innerHTML]="clarification.content"></div></li>
               </ul>
             </nz-list-item-meta-description>
           </nz-list-item-meta>

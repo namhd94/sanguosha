@@ -1,5 +1,7 @@
 package com.boardgame.sanguosha.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -18,9 +20,9 @@ public interface ClarificationRepository extends JpaRepository<ClarificationEnti
 	/**
 	 * Find by card.
 	 *
-	 * @param cardId the card id
+	 * @param cardName the card name
 	 * @return the clarification entity
 	 */
-	@Query("SELECT c FROM ClarificationEntity c WHERE c.card.id = :cardId")
-	public ClarificationEntity findByCard(@Param("cardId") final Integer cardId);
+	@Query("SELECT c FROM ClarificationEntity c WHERE c.card.name = :cardName")
+	public List<ClarificationEntity> findByCard(@Param("cardName") final String cardName);
 }

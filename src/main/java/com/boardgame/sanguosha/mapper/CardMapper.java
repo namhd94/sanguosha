@@ -28,6 +28,7 @@ public class CardMapper extends MapperBase<Card, CardEntity> {
 		final Card dto = new Card();
 		dto.setId(entity.getId());
 		dto.setName(entity.getName());
+		dto.setFullName(entity.getFullName());
 		dto.setDescription(entity.getDescription());
 		dto.setImage(entity.getImage());
 		dto.setType(entity.getType());
@@ -45,6 +46,7 @@ public class CardMapper extends MapperBase<Card, CardEntity> {
 	public CardEntity toEntity(final Card dto) throws Exception {
 		final CardEntity entity = new CardEntity();
 		entity.setName(dto.getName());
+		entity.setFullName(dto.getFullName());
 		entity.setDescription(dto.getDescription());
 		entity.setImage(dto.getImage());
 		entity.setType(dto.getType());

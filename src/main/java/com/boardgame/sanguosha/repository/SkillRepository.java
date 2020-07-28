@@ -18,11 +18,11 @@ import com.boardgame.sanguosha.entity.SkillEntity;
 public interface SkillRepository extends JpaRepository<SkillEntity, Integer>{
 	
 	/**
-	 * Find by type.
+	 * Find by card.
 	 *
-	 * @param cardId the card id
+	 * @param cardName the card name
 	 * @return the list
 	 */
-	@Query("SELECT s FROM SkillEntity s WHERE s.card.id = :cardId")
-	public List<SkillEntity> findByCard(@Param("cardId") final Integer cardId);
+	@Query("SELECT s FROM SkillEntity s WHERE s.card.name = :cardName")
+	public List<SkillEntity> findByCard(@Param("cardName") final String cardName);
 }

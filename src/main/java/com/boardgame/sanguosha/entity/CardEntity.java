@@ -1,5 +1,7 @@
 package com.boardgame.sanguosha.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,9 +16,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "card")
-public class CardEntity {
+public class CardEntity implements Serializable{
 
-	/** The id. */
+    /** The Constant serialVersionUID. */
+    private static final long serialVersionUID = 8532092033276945511L;
+
+    /** The id. */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -25,6 +30,10 @@ public class CardEntity {
 	/** The name. */
 	@Column(name = "name")
 	private String name;
+	
+    /** The full name. */
+    @Column(name = "full_name")
+    private String fullName;
 
 	/** The description. */
 	@Column(name = "description")
@@ -75,6 +84,24 @@ public class CardEntity {
 	}
 
 	/**
+	 * Gets the full name.
+	 *
+	 * @return the fullName
+	 */
+    public String getFullName() {
+        return fullName;
+    }
+
+    /**
+     * Sets the full name.
+     *
+     * @param fullName the fullName to set
+     */
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    /**
 	 * Gets the description.
 	 *
 	 * @return the description

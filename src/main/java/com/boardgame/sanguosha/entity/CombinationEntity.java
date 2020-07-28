@@ -34,7 +34,7 @@ public class CombinationEntity {
      * 
      */
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "card_id", referencedColumnName = "id")
+    @JoinColumn(name = "card_name", referencedColumnName = "name")
     private CardEntity card;
 	
 	/**

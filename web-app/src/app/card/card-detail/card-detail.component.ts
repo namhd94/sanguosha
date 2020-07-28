@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CardDetailComponent implements OnInit {
 
   card: Card;
-  id: number;
+  name: string;
   constructor(
     private cardService: CardService,
     private activatedRoute: ActivatedRoute
@@ -20,8 +20,8 @@ export class CardDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.card = new Card();
-    this.id = this.activatedRoute.snapshot.params.id;
-    this.cardService.getCard(this.id).subscribe(card => {
+    this.name = this.activatedRoute.snapshot.params.name;
+    this.cardService.getCard(this.name).subscribe(card => {
       this.card = card;
     });
   }

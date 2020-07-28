@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { CardService } from './../card.service';
 import {Component, OnInit} from '@angular/core';
 import { Card } from '../model/card.model';
@@ -10,15 +11,20 @@ import { Card } from '../model/card.model';
 export class CardListComponent implements OnInit {
 
   cards: Card[];
-  constructor(private cardService: CardService) {
+  type: string;
+  constructor(
+    private cardService: CardService,
+    private activatedRoute: ActivatedRoute
+    ) {
   }
 
   ngOnInit(): void {
-    this.reloadData();
+    this.type = this.activatedRoute.snapshot.params.type;
+    this.reloadData(this.type);
   }
 
-  reloadData(): void {
-    this.cardService.getCards('nguy').subscribe(cards => {
+  reloadData(type: string): void {
+    this.cardService.getCards(type).subscribe(cards => {
       this.cards = cards;
     });
   }

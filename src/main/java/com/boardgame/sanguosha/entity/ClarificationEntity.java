@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class ClarificationEntity.
  *
@@ -28,21 +29,17 @@ public class ClarificationEntity {
 	/** The content. */
 	@Column(name = "content")
 	private String content;
-
-	/** The strength. */
-	@Column(name = "strength")
-	private String strength;
-
-	/** The weakness. */
-	@Column(name = "weakness")
-	private String weakness;
+	
+	/** The type. */
+	@Column(name = "type")
+	private Integer type;
 
 	/**
 	 * The repair plan that the entry belongs to.
 	 * 
 	 */
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "card_id", referencedColumnName = "id")
+	@JoinColumn(name = "card_name", referencedColumnName = "name")
 	private CardEntity card;
 
 	/**
@@ -82,42 +79,24 @@ public class ClarificationEntity {
 	}
 
 	/**
-	 * Gets the strength.
+	 * Gets the type.
 	 *
-	 * @return the strength
+	 * @return the type
 	 */
-	public String getStrength() {
-		return strength;
-	}
+	public Integer getType() {
+        return type;
+    }
 
-	/**
-	 * Sets the strength.
-	 *
-	 * @param strength the strength to set
-	 */
-	public void setStrength(String strength) {
-		this.strength = strength;
-	}
+    /**
+     * Sets the type.
+     *
+     * @param type the new type
+     */
+    public void setType(Integer type) {
+        this.type = type;
+    }
 
-	/**
-	 * Gets the weakness.
-	 *
-	 * @return the weakness
-	 */
-	public String getWeakness() {
-		return weakness;
-	}
-
-	/**
-	 * Sets the weakness.
-	 *
-	 * @param weakness the weakness to set
-	 */
-	public void setWeakness(String weakness) {
-		this.weakness = weakness;
-	}
-
-	/**
+    /**
 	 * Gets the card.
 	 *
 	 * @return the card

@@ -6,11 +6,12 @@ import { Information } from './information.model';
 export class Card {
   id: number;
   name: string;
+  fullName: string;
   description: string;
   image: string;
   information: Information;
-  clarification: Clarification;
+  clarifications: Clarification;
   combination: Combination;
-  skill: Skill;
+  skills: Skill;
   type: string;
 }

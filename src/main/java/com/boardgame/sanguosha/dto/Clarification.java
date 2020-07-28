@@ -1,7 +1,7 @@
 package com.boardgame.sanguosha.dto;
 
 /**
- * The Class Skill.
+ * The Class Clarification.
  *
  * @author namhd94
  */
@@ -13,11 +13,8 @@ public class Clarification {
 	/** The name. */
 	private String content;
 	
-	/** The strength. */
-	private String strength;
-	
-	/** The weakness. */
-	private String weakness;
+	/** The type. */
+	private Integer type;
 	
 	/**
 	 * Gets the id.
@@ -55,40 +52,21 @@ public class Clarification {
 		this.content = content;
 	}
 
-	/**
-	 * Gets the strength.
-	 *
-	 * @return the strength
-	 */
-	public String getStrength() {
-		return strength;
-	}
+    /**
+     * Gets the type.
+     *
+     * @return the type
+     */
+    public Integer getType() {
+        return type;
+    }
 
-	/**
-	 * Sets the strength.
-	 *
-	 * @param strength the strength to set
-	 */
-	public void setStrength(String strength) {
-		this.strength = strength;
-	}
-
-	/**
-	 * Gets the weakness.
-	 *
-	 * @return the weakness
-	 */
-	public String getWeakness() {
-		return weakness;
-	}
-
-	/**
-	 * Sets the weakness.
-	 *
-	 * @param weakness the weakness to set
-	 */
-	public void setWeakness(String weakness) {
-		this.weakness = weakness;
-	}
-	
+    /**
+     * Sets the type.
+     *
+     * @param type the type to set
+     */
+    public void setType(Integer type) {
+        this.type = type;
+    }
 }
