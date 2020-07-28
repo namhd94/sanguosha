@@ -129,13 +129,60 @@ có thể gặp bất lợi nếu hai người không ở cùng một đội.'
 , 'sima-yi'
 );
 
--- Combination
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href=“/cards/detail/zhen-ji”>[Chân Cơ]</a> - Tư Mã Ý có thể đổi phán xét để “Lạc Thần ” của Chân Cơ phát huy tác dụng'
+, 4
+, 'sima-yi'
+);
+
+-- Information
 INSERT INTO public.information(kingdom, health, gender, range, expansion, card_name)
 VALUES (
-'Nguy'
+'Nguỵ'
 , 3
 , 'Nam'
 , null
-, 'Co ban'
+, 'Cơ bản'
 , 'sima-yi'
+);
+
+-- Attack
+-- Card
+INSERT INTO public.card(name, full_name, description, image, type) 
+VALUES ('attack', 'Sát', 'Một lần trong giai đoạn ra bài bạn có thể tấn công bất cứ người nào trong vùng tấn công của bạn', 'assets/img/attack.jpg', 'basic');
+	
+
+
+-- Clarification
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Chỉ được dùng 1 lần mỗi lượt. Kể cả <a href=“/cards/detail/fire-attack">[Hoả sát]</a> và <a href=“/cards/detail/lightning-attack">[Lôi sát]</a>'
+, 1
+, 'attack'
+);
+
+-- Wine
+-- Card
+INSERT INTO public.card(name, full_name, description, image, type) 
+VALUES ('wine', 'Rượu', 'Khi người chơi hấp hối, họ có thể sử dụng Rượu để hổi 1 máu. Hoặc họ sử dụng Rượu trong lượt ra bài của mình, khi đó lá <a href="/cards/detail/attack">[Sát]</a> tiếp theo sẽ được cộng 1 sát thương.', 'assets/img/wine.jpg', 'basic');
+
+-- Clarification
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Nếu sử dụng Rượu để tăng sát thương thì không thể dùng lá Rượu đó để hồi máu.'
+, 1
+, 'wine'
+);
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Chỉ khi người chơi hấp hối mới được dùng Rượu để hồi máu.'
+, 1
+, 'wine'
+);
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Nếu người chơi sử dụng Rượu để tăng sát thương và sau đó họ kết thúc lượt của mình, thì lá <a href="/cards/detail/attack">[Sát]</a> tiếp theo sẽ không được cộng sát thương.'
+, 1
+, 'wine'
 );

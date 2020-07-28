@@ -3,39 +3,67 @@
     <img alt="{{card.fullName}}" src="{{card.image}}" />
   </div>
 </div>
-<div *ngIf="card?.information">
-  <div nz-row>
-    <div nz-col nzSpan="24">
-      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">{{card.fullName}}</h3>
-      <nz-list nzBordered>
-        <nz-list-item>
-          <span nz-typography><mark>Description</mark></span>
-          {{card.description}}
-        </nz-list-item>
-        <nz-list-item>
-          <span nz-typography><mark>Kingdom</mark></span>
-          {{card.information.kingdom}}
-        </nz-list-item>
-        <nz-list-item>
-          <span nz-typography><mark>Health</mark></span>
-          {{card.information.health}}
-        </nz-list-item>
-        <nz-list-item>
-          <span nz-typography><mark>Gender</mark></span>
-          {{card.information.gender}}
-        </nz-list-item>
-        <nz-list-item>
-          <span nz-typography><mark>Expansion</mark></span>
-          {{card.information.expansion}}
-        </nz-list-item>
-      </nz-list>
-    </div>
+<div nz-row>
+  <div nz-col nzSpan="24">
+    <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">{{card.fullName}}</h3>
+    <nz-list nzBordered>
+      <nz-list-item>
+        <nz-list-item-meta>
+          <nz-list-item-meta-title>
+            <h4>Mô tả</h4>
+          </nz-list-item-meta-title>
+          <nz-list-item-meta-description>
+            <div [innerHTML]="card.description"></div>
+          </nz-list-item-meta-description>
+        </nz-list-item-meta>
+      </nz-list-item>
+      <nz-list-item *ngIf="card?.information">
+        <nz-list-item-meta>
+          <nz-list-item-meta-title>
+            <h4>Nước</h4>
+          </nz-list-item-meta-title>
+          <nz-list-item-meta-description>
+            {{card.information.kingdom}}
+          </nz-list-item-meta-description>
+        </nz-list-item-meta>
+      </nz-list-item>
+      <nz-list-item *ngIf="card?.information">
+        <nz-list-item-meta>
+          <nz-list-item-meta-title>
+            <h4>Máu</h4>
+          </nz-list-item-meta-title>
+          <nz-list-item-meta-description>
+            {{card.information.health}}
+          </nz-list-item-meta-description>
+        </nz-list-item-meta>
+      </nz-list-item>
+      <nz-list-item *ngIf="card?.information">
+        <nz-list-item-meta>
+          <nz-list-item-meta-title>
+            <h4>Giới tính</h4>
+          </nz-list-item-meta-title>
+          <nz-list-item-meta-description>
+            {{card.information.gender}}
+          </nz-list-item-meta-description>
+        </nz-list-item-meta>
+      </nz-list-item>
+      <nz-list-item *ngIf="card?.information">
+        <nz-list-item-meta>
+          <nz-list-item-meta-title>
+            <h4>Bộ bài</h4>
+          </nz-list-item-meta-title>
+          <nz-list-item-meta-description>
+            {{card.information.expansion}}
+          </nz-list-item-meta-description>
+        </nz-list-item-meta>
+      </nz-list-item>
+    </nz-list>
   </div>
 </div>
 <div *ngIf="card?.skills">
   <div nz-row>
     <div nz-col nzSpan="24">
-      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">Skills</h3>
+      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">Kĩ năng</h3>
       <nz-list nzBordered>
         <nz-list-item *ngFor="let skill of card.skills">
           <nz-list-item-meta>
@@ -50,73 +78,69 @@
       </nz-list>
     </div>
   </div>
-</div> 
+</div>
 <div *ngIf="card?.clarifications">
   <div nz-row>
     <div nz-col nzSpan="24">
       <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
-        Clarification
+        Giải thích
       </h3>
       <nz-list nzBordered>
         <nz-list-item>
           <nz-list-item-meta>
             <nz-list-item-meta-description>
               <ul *ngFor="let clarification of card.clarifications">
-                <li *ngIf="clarification.type == 1"><div [innerHTML]="clarification.content"></div></li>
+                <li *ngIf="clarification.type == 1">
+                  <div [innerHTML]="clarification.content"></div>
+                </li>
               </ul>
             </nz-list-item-meta-description>
           </nz-list-item-meta>
         </nz-list-item>
       </nz-list>
-    </div>
-  </div>
-  <div nz-row>
-    <div nz-col nzSpan="24">
-      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
-        Strength
-      </h3>
       <nz-list nzBordered>
         <nz-list-item>
           <nz-list-item-meta>
+            <nz-list-item-meta-title>
+              <h4>Điểm mạnh</h4>
+            </nz-list-item-meta-title>
             <nz-list-item-meta-description>
               <ul *ngFor="let clarification of card.clarifications">
-                <li *ngIf="clarification.type == 2"><div [innerHTML]="clarification.content"></div></li>
+                <li *ngIf="clarification.type == 2">
+                  <div [innerHTML]="clarification.content"></div>
+                </li>
               </ul>
             </nz-list-item-meta-description>
           </nz-list-item-meta>
         </nz-list-item>
       </nz-list>
-    </div>
-  </div>
-  <div nz-row>
-    <div nz-col nzSpan="24">
-      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
-        Weakness
-      </h3>
       <nz-list nzBordered>
         <nz-list-item>
           <nz-list-item-meta>
+            <nz-list-item-meta-title>
+              <h4>Điểm yếu</h4>
+            </nz-list-item-meta-title>
             <nz-list-item-meta-description>
               <ul *ngFor="let clarification of card.clarifications">
-                <li *ngIf="clarification.type == 3"><div [innerHTML]="clarification.content"></div></li>
+                <li *ngIf="clarification.type == 3">
+                  <div [innerHTML]="clarification.content"></div>
+                </li>
               </ul>
             </nz-list-item-meta-description>
           </nz-list-item-meta>
         </nz-list-item>
       </nz-list>
-    </div>
-  </div>
-  <div nz-row>
-    <div nz-col nzSpan="24">
-      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
-        Notable Combinations
-      </h3>
       <nz-list nzBordered>
         <nz-list-item>
           <nz-list-item-meta>
+            <nz-list-item-meta-title>
+              <h4>Kết hợp</h4>
+            </nz-list-item-meta-title>
             <nz-list-item-meta-description>
               <ul *ngFor="let clarification of card.clarifications">
-                <li *ngIf="clarification.type == 4"><div [innerHTML]="clarification.content"></div></li>
+                <li *ngIf="clarification.type == 4">
+                  <div [innerHTML]="clarification.content"></div>
+                </li>
               </ul>
             </nz-list-item-meta-description>
           </nz-list-item-meta>

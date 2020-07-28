@@ -91,22 +91,26 @@ public class CardServiceImpl implements CardService {
         final InformationEntity informationEntity = informationRepository
                 .findByCard(entity.getName());
 
-        if (skillEntities == null || clarificationEntities == null || informationEntity == null) {
+        if (clarificationEntities == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                     "the extra card properties is not found");
         }
 
         try {
-            final List<Skill> skills = MapperFactory.map(SkillMapper.class)
-                    .toDtoList(skillEntities);
+        	card = MapperFactory.map(CardMapper.class).toDto(entity);
+        	if (!skillEntities.isEmpty()) {
+        		final List<Skill> skills = MapperFactory.map(SkillMapper.class)
+        				.toDtoList(skillEntities);
+        		card.setSkills(skills);
+        	}
             final List<Clarification> clarifications = MapperFactory.map(ClarificationMapper.class)
                     .toDtoList(clarificationEntities);
-            final Information information = MapperFactory.map(InformationMapper.class)
-                    .toDto(informationEntity);
-            card = MapperFactory.map(CardMapper.class).toDto(entity);
-            card.setSkills(skills);
             card.setClarifications(clarifications);
-            card.setInformation(information);
+            if (informationEntity != null) {
+            	final Information information = MapperFactory.map(InformationMapper.class)
+            			.toDto(informationEntity);
+            	card.setInformation(information);
+            }
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "something is wrong");
         }
