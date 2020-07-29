@@ -7,7 +7,7 @@ CREATE TABLE public.card
     full_name character varying(50) COLLATE pg_catalog."default" NOT NULL,
     description character varying(1000) COLLATE pg_catalog."default",
     image character varying(50) COLLATE pg_catalog."default" NOT NULL,
-    type character varying(8) COLLATE pg_catalog."default" NOT NULL,
+    type character varying(16) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT card_pkey PRIMARY KEY (id),
     CONSTRAINT name_unique_index UNIQUE (name)
 )

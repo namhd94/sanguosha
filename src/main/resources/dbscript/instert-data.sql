@@ -68,7 +68,7 @@ INSERT INTO public.clarification(content, type, card_name)
 VALUES (
 'Quỹ Tài mang lại cho Tư Mã Ý quyền kiểm soát thẻ phán quyết. Ví dụ bạn có
     thể đổi phán xét nếu như đồng minh của bạn là nạn nhân của lá
-    <a href="/cards/detail/capture">[Binh Lương Thốn Đoạn]</a>'
+    <a href="/cards/detail/capture">[Lạc Bất Tư Thục]</a>'
 , 2
 , 'sima-yi'
 );
@@ -131,7 +131,7 @@ có thể gặp bất lợi nếu hai người không ở cùng một đội.'
 
 INSERT INTO public.clarification(content, type, card_name)
 VALUES (
-'<a href=“/cards/detail/zhen-ji”>[Chân Cơ]</a> - Tư Mã Ý có thể đổi phán xét để “Lạc Thần ” của Chân Cơ phát huy tác dụng'
+'<a href="/cards/detail/zhen-ji">[Chân Cơ]</a> - Tư Mã Ý có thể đổi phán xét để "Lạc Thần " của Chân Cơ phát huy tác dụng'
 , 4
 , 'sima-yi'
 );
@@ -157,7 +157,7 @@ VALUES ('attack', 'Sát', 'Một lần trong giai đoạn ra bài bạn có th�
 -- Clarification
 INSERT INTO public.clarification(content, type, card_name)
 VALUES (
-'Chỉ được dùng 1 lần mỗi lượt. Kể cả <a href=“/cards/detail/fire-attack">[Hoả sát]</a> và <a href=“/cards/detail/lightning-attack">[Lôi sát]</a>'
+'Chỉ được dùng 1 lần mỗi lượt. Kể cả <a href="/cards/detail/fire-attack">[Hoả sát]</a> và <a href="/cards/detail/lightning-attack">[Lôi sát]</a>'
 , 1
 , 'attack'
 );
@@ -165,24 +165,76 @@ VALUES (
 -- Wine
 -- Card
 INSERT INTO public.card(name, full_name, description, image, type) 
-VALUES ('wine', 'Rượu', 'Khi người chơi hấp hối, họ có thể sử dụng Rượu để hổi 1 máu. Hoặc họ sử dụng Rượu trong lượt ra bài của mình, khi đó lá <a href="/cards/detail/attack">[Sát]</a> tiếp theo sẽ được cộng 1 sát thương.', 'assets/img/wine.jpg', 'basic');
+VALUES ('wine', 'Rượu', 'Khi người chơi hấp hối, họ có thể sử dụng [Rượu] để hổi 1 máu. Hoặc họ sử dụng [Rượu] trong lượt ra bài của mình, khi đó lá <a href="/cards/detail/attack">[Sát]</a> tiếp theo sẽ được cộng 1 sát thương.', 'assets/img/wine.jpg', 'basic');
 
 -- Clarification
 INSERT INTO public.clarification(content, type, card_name)
 VALUES (
-'Nếu sử dụng Rượu để tăng sát thương thì không thể dùng lá Rượu đó để hồi máu.'
+'Nếu sử dụng Rượu để tăng sát thương thì không thể dùng lá [Rượu] đó để hồi máu.'
 , 1
 , 'wine'
 );
 INSERT INTO public.clarification(content, type, card_name)
 VALUES (
-'Chỉ khi người chơi hấp hối mới được dùng Rượu để hồi máu.'
+'Chỉ khi người chơi hấp hối mới được dùng [Rượu] để hồi máu.'
 , 1
 , 'wine'
 );
 INSERT INTO public.clarification(content, type, card_name)
 VALUES (
-'Nếu người chơi sử dụng Rượu để tăng sát thương và sau đó họ kết thúc lượt của mình, thì lá <a href="/cards/detail/attack">[Sát]</a> tiếp theo sẽ không được cộng sát thương.'
+'Nếu người chơi sử dụng [Rượu] để tăng sát thương và sau đó họ kết thúc lượt của mình, thì lá <a href="/cards/detail/attack">[Sát]</a> tiếp theo sẽ không được cộng sát thương.'
 , 1
 , 'wine'
+);
+
+-- Peach
+-- Card
+INSERT INTO public.card(name, full_name, description, image, type) 
+VALUES ('peach', 'Đào', 'Trong lượt chơi của mình, người chơi có thể sử dụng [Đào] để tăng 1 máu. Hoặc khi một người chơi khác hấp hối, bất kì người chơi nào cũng có thể sử dụng 1 [Đào] để tăng máu cho người đó.', 'assets/img/peach.jpg', 'basic');
+
+-- Clarification
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Không thể sử dụng [Đào] để tăng máu cho người khác nếu như họ không hấp hối.'
+, 1
+, 'peach'
+);
+
+-- Capture
+-- Card
+INSERT INTO public.card(name, full_name, description, image, type) 
+VALUES ('capture', 'Lạc Bất Tư Thục', 'Một người chơi có thể đặt lá cẩm năng có thời gian lên một người chơi khác. Mục tiêu phải bốc phán xét đầu lượt của họ. Nếu không phải là lá Cơ, mục tiêu không được ra bài.', 'assets/img/capture.jpg', 'basic');
+
+-- Clarification
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href="/cards/detail/negate">[Vô Giải Khả Kích]</a> không được sử dụng khi lá [Lạc Bất Tư Thục] đã được đặt lên mục tiêu. <a href="/cards/detail/negate">[Vô Giải Khả Kích]</a> phải được sử dụng khi giai đoạn phán xét bắt đầu.'
+, 1
+, 'capture'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'[Lạc Bất Tư Thục] có thể bị bỏ bởi <a href="/cards/detail/break">[Quá Hạ Sách Kiều]</a> hoặc bị lấy bởi <a href="/cards/detail/steal">[Thuận Thủ Thiên Dương]</a>.'
+, 1
+, 'capture'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Một người chơi không bị [Lạc Bất Tư Thục] khi họ đã bị một [Lạc Bất Tư Thục] khác.'
+, 1
+, 'capture'
+);
+
+-- Eight Trigrams
+-- Card
+INSERT INTO public.card(name, full_name, description, image, type) 
+VALUES ('eight-trigrams', 'Bát Quái Trận', 'Khi cần <a href="/cards/detail/escape">[Thiểm]</a>, người chơi có thể lật phán xét, nếu lật ra bài Đỏ thì xem như đã <a href="/cards/detail/escape">[Thiểm]</a>.', 'assets/img/eight-trigrams.jpg', 'equipment');
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Nếu lá phán xét là đen, người chơi phải tự dùng lá <a href="/cards/detail/escape">[Thiểm]</a>.'
+, 1
+, 'eight-trigrams'
 );
