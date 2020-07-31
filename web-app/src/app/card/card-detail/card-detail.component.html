@@ -50,6 +50,16 @@
       <nz-list-item *ngIf="card?.information">
         <nz-list-item-meta>
           <nz-list-item-meta-title>
+            <h4>Tầm đánh</h4>
+          </nz-list-item-meta-title>
+          <nz-list-item-meta-description>
+            {{card.information.range}}
+          </nz-list-item-meta-description>
+        </nz-list-item-meta>
+      </nz-list-item>
+      <nz-list-item *ngIf="card?.information">
+        <nz-list-item-meta>
+          <nz-list-item-meta-title>
             <h4>Bộ bài</h4>
           </nz-list-item-meta-title>
           <nz-list-item-meta-description>

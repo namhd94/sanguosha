@@ -155,3 +155,72 @@ null
 , 'Cơ bản'
 , 'ice-sword'
 );
+
+-- Gender Swords
+-- Card
+INSERT INTO public.card(name, full_name, description, image, type)
+VALUES ('gender-swords', 'Thư Hùng Song Kiếm', 'Khi <a href="/cards/detail/attack">[Sát]</a> mục tiêu khác giới, người chơi có quyền bắt mục tiêu tự chọn: bỏ 1 lá trên tay hoặc cho người tấn công rút một lá.', 'assets/img/gender-swords.jpg', 'equipment');
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Người tấn công buộc mục tiêu phải lựa chọn trước khi tấn công, mục tiêu sẽ mất một lá bài hoặc người tấn công được thêm 1 lá trước khi mục tiêu dùng <a href="/cards/detail/escape">[Thiểm]</a> hoặc giáp của mục tiêu có tác dụng.'
+, 1
+, 'gender-swords'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href="/cards/detail/zhang-fei">[Trương Phi]</a> - điều kiện lý tưởng để sử dụng [Thư Hùng Song Kiếm] là trên bên địch có ít nhất 1 người chơi là giới tính của tướng là Nữ.'
+, 4
+, 'gender-swords'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href="/cards/detail/da-xiao">[Đại Kiều]</a> - Nếu có thể chuyển <a href="/cards/detail/attack">[Sát]</a> qua mục tiêu khác thì mục tiêu đó sẽ buộc phải lựa chọn thay cho <a href="/cards/detail/da-xiao">[Đại Kiều]</a>.'
+, 4
+, 'gender-swords'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href="/cards/detail/liu-shan">[Lưu Thiện]</a> - Người tấn công buộc phải bỏ thêm 1 lá cơ bản trước khi tân công nên [Thư Hùng Song Kiếm] không có tác dụng cho lắm đối với tướng này.'
+, 4
+, 'gender-swords'
+);
+
+-- Information
+INSERT INTO public.information(kingdom, health, gender, range, expansion, card_name)
+VALUES (
+null
+, null
+, null
+, 2
+, 'Cơ bản'
+, 'gender-swords'
+);
+
+-- Axe
+-- Card
+INSERT INTO public.card(name, full_name, description, image, type)
+VALUES ('axe', 'Quán Thạch Phủ', 'Khi lá <a href="/cards/detail/attack">[Sát]</a> bị <a href="/cards/detail/escape">[Thiểm]</a> vô hiệu, có thể bỏ 2 lá bài, khi đó lá <a href="/cards/detail/attack">[Sát]</a> vẫn tạo thành sát thương cho mục tiêu.', 'assets/img/axe.jpg', 'equipment');
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Người tấn công có thể bỏ bài trong khu vực trang bị để kích hoạt [Quán Thạch Phủ], ngoại trừ [Quán Thạch Phủ]'
+, 1
+, 'axe'
+);
+
+-- Information
+INSERT INTO public.information(kingdom, health, gender, range, expansion, card_name)
+VALUES (
+null
+, null
+, null
+, 3
+, 'Cơ bản'
+, 'axe'
+);
+
+

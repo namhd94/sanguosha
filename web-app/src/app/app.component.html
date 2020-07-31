@@ -11,16 +11,16 @@
           <li nz-menu-item nzMatchRouter [routerLink]="['cards', 'wei']">
             Nguỵ
           </li>
-          <li nz-menu-item>Thục</li>
-          <li nz-menu-item>Ngô</li>
-          <li nz-menu-item>Quần hùng</li>
+          <li nz-menu-item [routerLink]="['cards', 'shu']">Thục</li>
+          <li nz-menu-item [routerLink]="['cards', 'wu']">Ngô</li>
+          <li nz-menu-item [routerLink]="['cards', 'hero']">Quần hùng</li>
         </ul>
       </li>
       <li nz-submenu nzTitle="Thẻ bài" nzIcon="tool">
         <ul>
           <li nz-menu-item [routerLink]="['cards', 'basic']">Cơ bản</li>
-          <li nz-menu-item>Trang bị</li>
-          <li nz-menu-item>Công cụ</li>
+          <li nz-menu-item [routerLink]="['cards', 'equipment']">Trang bị</li>
+          <li nz-menu-item [routerLink]="['cards', 'tool']">Công cụ</li>
         </ul>
       </li>
       <li nz-menu-item nzMatchRouter [routerLink]="['guide']">
