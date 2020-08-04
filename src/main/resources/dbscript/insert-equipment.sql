@@ -1,15 +1,3 @@
--- Eight Trigrams
--- Card
-INSERT INTO public.card(name, full_name, description, image, type)
-VALUES ('eight-trigrams', 'Bát Quái Trận', 'Khi cần <a href="/cards/detail/escape">[Thiểm]</a>, người chơi có thể lật phán xét, nếu lật ra bài Đỏ thì xem như đã <a href="/cards/detail/escape">[Thiểm]</a>.', 'assets/img/eight-trigrams.jpg', 'equipment');
-
-INSERT INTO public.clarification(content, type, card_name)
-VALUES (
-'Nếu lá phán xét là đen, người chơi phải tự dùng lá <a href="/cards/detail/escape">[Thiểm]</a>.'
-, 1
-, 'eight-trigrams'
-);
-
 -- Crossbow
 -- Card
 INSERT INTO public.card(name, full_name, description, image, type)
@@ -207,8 +195,36 @@ VALUES ('axe', 'Quán Thạch Phủ', 'Khi lá <a href="/cards/detail/attack">[S
 
 INSERT INTO public.clarification(content, type, card_name)
 VALUES (
-'Người tấn công có thể bỏ bài trong khu vực trang bị để kích hoạt [Quán Thạch Phủ], ngoại trừ [Quán Thạch Phủ]'
+'Người tấn công có thể bỏ bài trong khu vực trang bị để kích hoạt [Quán Thạch Phủ], ngoại trừ [Quán Thạch Phủ].'
 , 1
+, 'axe'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Chỉ khi bị <a href="/cards/detail/escape">[Thiểm]</a> đòn tấn công thì mới được bỏ bài. Nếu lá <a href="/cards/detail/attack">[Sát]</a> đó bị chặn bởi <a href="/cards/detail/black-shield">[Nhân Vương Thuẫn]</a>, <a href="/cards/detail/wood-armor">[Đằng Giáp]</a> hoặc chiêu của <a href="/cards/detail/da-qiao">[Đại Kiều]</a>, thì người tấn công không được bỏ bài.'
+, 1
+, 'axe'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Những tướng gây dame mạnh rất hợp với [Quán Thạch Phủ], chẳng hạn như <a href="/cards/detail/xu-chu">[Hứa Chử]</a> hoặc những người chơi sử dụng [Tửu Sát].'
+, 4
+, 'axe'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href="/cards/detail/zhuge-liang">[Gia Cát Lượng]</a> bỏ 2 lá cuối cùng trên tay để gây sát thương thành công, đồng thời sẽ không nhận sát thương từ <a href="/cards/detail/attack">[Sát]</a> và <a href="/cards/detail/dual">[Quyết Đấu]</a> ở lượt người chơi khác.'
+, 4
+, 'axe'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href="/cards/detail/eight-trigrams">[Bát Quái Trận]</a> của <a href="/cards/detail/young-zhuge-liang">[Gia Cát Lượng - Ngoạ Long]</a> sẽ trở nên vô dụng trước [Quán Thạch Phủ].'
+, 4
 , 'axe'
 );
 
@@ -223,4 +239,188 @@ null
 , 'axe'
 );
 
+-- Serpent Spear
+-- Card
+INSERT INTO public.card(name, full_name, description, image, type)
+VALUES ('serpent-spear', 'Trượng Bát Xà Mâu', 'Có thể dùng 2 lá bài trên tay như <a href="/cards/detail/attack">[Sát]</a>.', 'assets/img/serpent-spear.jpg', 'equipment');
 
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Không thể dùng lá trang bị để kích hoạt [Trượng Bát Xà Mâu].'
+, 1
+, 'serpent-spear'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Không thể dùng lá trang bị để kích hoạt [Trượng Bát Xà Mâu].'
+, 1
+, 'serpent-spear'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Về màu của lá <a href="/cards/detail/attack">[Sát]</a>, nếu như 2 lá trên tay bỏ ra cùng màu thì đó là màu của lá <a href="/cards/detail/attack">[Sát]</a>, nếu như 2 lá đó khác màu thì người tấn công được chọn 1 trong 2 màu.'
+, 1
+, 'serpent-spear'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href="/cards/detail/zhang-fei">[Trương Phi]</a> cực kì thích hợp với trang bị này.'
+, 4
+, 'serpent-spear'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href="/cards/detail/zhuge-liang">[Gia Cát Lượng]</a> bỏ 2 lá cuối cùng trên tay để gây sát thương thành công, đồng thời sẽ không nhận sát thương từ <a href="/cards/detail/attack">[Sát]</a> và <a href="/cards/detail/dual">[Quyết Đấu]</a> ở lượt người chơi khác.'
+, 4
+, 'serpent-spear'
+);
+
+-- Information
+INSERT INTO public.information(kingdom, health, gender, range, expansion, card_name)
+VALUES (
+null
+, null
+, null
+, 3
+, 'Cơ bản'
+, 'serpent-spear'
+);
+
+-- Fire Fan
+-- Card
+INSERT INTO public.card(name, full_name, description, image, type)
+VALUES ('fire-fan', 'Chu Tước Vũ Phiến', 'Có thể sử dụng <a href="/cards/detail/attack">[Sát]</a> như <a href="/cards/detail/fire-attack">[Hỏa Sát]</a>.', 'assets/img/fire-fan.jpg', 'equipment');
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Không thể sử dụng <a href="/cards/detail/lightning-attack">[Lôi Sát]</a> như <a href="/cards/detail/fire-attack">[Hỏa Sát]</a> được.'
+, 1
+, 'fire-fan'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Người tấn công có quyền được chọn <a href="/cards/detail/attack">[Sát]</a> hay là <a href="/cards/detail/fire-attack">[Hỏa Sát]</a>.'
+, 1
+, 'fire-fan'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'[Chu Tước Vũ Phiến] chỉ thay đổi giữa <a href="/cards/detail/attack">[Sát]</a> và <a href="/cards/detail/fire-attack">[Hỏa Sát]</a> chứ không thay đổi màu của lá bài.'
+, 1
+, 'fire-fan'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Những tướng như <a href="/cards/detail/ma-chao">[Mã Siêu]</a>, <a href="/cards/detail/huang-zhong">[Hoàng Trung]</a> và <a href="/cards/detail/lu-bu">[Lữ Bố]</a> nếu thấy địch sử dụng <a href="/cards/detail/wood-armor">[Đằng Giáp]</a> thì nên sử dụng [Chu Tước Vũ Phiến].'
+, 4
+, 'fire-fan'
+);
+
+-- Information
+INSERT INTO public.information(kingdom, health, gender, range, expansion, card_name)
+VALUES (
+null
+, null
+, null
+, 4
+, 'Cơ bản'
+, 'fire-fan'
+);
+
+-- Long Bow
+-- Card
+INSERT INTO public.card(name, full_name, description, image, type)
+VALUES ('long-bow', 'Kỳ Lân Cung', 'Khi sử dụng <a href="/cards/detail/attack">[Sát]</a> thành công, có thể bỏ đi một tọa kỵ trong khu trang bị của mục tiêu.', 'assets/img/long-bow.jpg', 'equipment');
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Trong trường hợp đối phương có 2 toạ kị, người tấn công sẽ là người chọn toạ kị nào bỏ đi.'
+, 1
+, 'long-bow'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Nếu gây sát thương thành công, bỏ toạ kị trước sau đó mới gây sát thương.'
+, 1
+, 'long-bow'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href="/cards/detail/huang-zhong">[Hoàng Trung]</a> cực kì thích hợp với [Kỳ Lân Cung].'
+, 1
+, 'long-bow'
+);
+
+-- Information
+INSERT INTO public.information(kingdom, health, gender, range, expansion, card_name)
+VALUES (
+null
+, null
+, null
+, 5
+, 'Cơ bản'
+, 'long-bow'
+);
+
+-- Eight Trigrams
+-- Card
+INSERT INTO public.card(name, full_name, description, image, type)
+VALUES ('eight-trigrams', 'Bát Quái Trận', 'Khi cần <a href="/cards/detail/escape">[Thiểm]</a>, người chơi có thể lật phán xét, nếu lật ra bài Đỏ thì xem như đã <a href="/cards/detail/escape">[Thiểm]</a>.', 'assets/img/eight-trigrams.jpg', 'equipment');
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Nếu lá phán xét là đen, người chơi phải tự dùng lá <a href="/cards/detail/escape">[Thiểm]</a>.'
+, 1
+, 'eight-trigrams'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Phát xét có thể bị thay đổi bởi những tướng có khả năng thay đổi phán xét.'
+, 1
+, 'eight-trigrams'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href="/cards/detail/zhang-jiao">[Trương Giác]</a> đặc biệt nguy hiểm khi sở hữu giáp này vì sau khi có <a href="/cards/detail/escape">[Thiểm]</a> từ phán xét có thể gây 2 sát thương lôi đến người chơi khác.'
+, 4
+, 'eight-trigrams'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href="/cards/detail/xiao-qiao">[Tiểu Kiều]</a> có 75% cơ hội phát xét ra <a href="/cards/detail/escape">[Thiểm]</a> vì lá bích được xem là lá cơ.'
+, 4
+, 'eight-trigrams'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href="/cards/detail/ma-chao">[Mã Siêu]</a> và <a href="/cards/detail/huang-zhong">[Hoàng Trung]</a> có thể đánh xuyên giáp này.'
+, 4
+, 'eight-trigrams'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Nếu bị <a href="/cards/detail/lu-bu">[Lữ Bố]</a> tấn công, người sở hữu giáp phải phán xét từng lần một, nếu có bất kì lần phán xét nào không thành công thì phải tự bỏ lá <a href="/cards/detail/escape">[Thiểm]</a>.'
+, 4
+, 'eight-trigrams'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Nếu người chơi phán xét ra <a href="/cards/detail/escape">[Thiểm]</a>, <a href="/cards/detail/pang-de">[Bàng Thống]</a> có thể buộc người chơi đó bỏ bài.'
+, 4
+, 'eight-trigrams'
+);
