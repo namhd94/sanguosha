@@ -424,3 +424,109 @@ VALUES (
 , 4
 , 'eight-trigrams'
 );
+
+-- Black Shield
+-- Card
+INSERT INTO public.card(name, full_name, description, image, type)
+VALUES ('black-shield', 'Nhân Vương Thuẫn', 'Tỏa định kỹ. Vô hiệu hóa lá <a href="/cards/detail/attack">[Sát]</a> màu đen.', 'assets/img/black-shield.jpg', 'equipment');
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Khi <a href="/cards/detail/dual">[Quyết đấu]</a> không thể kích hoạt [Nhân Vương Thuẫn].'
+, 1
+, 'black-shield'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Nếu người chơi sở hữu [Nhân Vương Thuẫn] đang bị xích. Khi họ bị gây sát thương một cách gián tiếp từ <a href="/cards/detail/attack">[Sát]</a> màu đen thì họ vẫn nhận sát thương.'
+, 1
+, 'black-shield'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Những tướng có thể dễ dàng sở hữu <a href="/cards/detail/attack">[Sát]</a> đỏ thì không cần lo lắng [Nhân Vương Thuẫn], chẳng hạn như <a href="/cards/detail/guan-yu">[Quan Vũ]</a>, <a href="/cards/detail/zhao-yun">[Triệu Vân]</a> và <a href="/cards/detail/xiao-qiao">[Tiểu Kiều]</a>.'
+, 4
+, 'black-shield'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href="/cards/detail/xiahou-yuan">[Hạ Hầu Uyên]</a> có thể gây sát thương không màu thì cũng khiến [Nhân Vương Thuẫn] trở nên vô dụng.'
+, 4
+, 'black-shield'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'[Nhân Vương Thuẫn] có thể chặn sát thường màu đen từ <a href="/cards/detail/ma-chao">[Mã Siêu]</a> và <a href="/cards/detail/huang-zhong">[Hoàng Trung]</a>.'
+, 4
+, 'black-shield'
+);
+
+-- Wood Armor
+-- Card
+INSERT INTO public.card(name, full_name, description, image, type)
+VALUES ('wood-armor', 'Đằng Giáp', 'Tỏa định kỹ. Vô hiệu hóa <a href="/cards/detail/barbarians">[Nam Man Nhập Xâm]</a>, <a href="/cards/detail/hail-of-arrows">[Vạn Tiễn Tề Phát]</a>, và <a href="/cards/detail/attack">[Sát]</a> thường. Khi bị sát thương về hỏa thì sát thương +1.', 'assets/img/wood-armor.jpg', 'equipment');
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Người chơi A trang bị <a href="/cards/detail/black-pommel">[Thanh Công Kiếm]</a> sử dụng <a href="/cards/detail/fire-attack">[Hỏa Sát]</a> lên người chơi B trang bị [Đằng Giáp] thành công, người chơi B chỉ nhận 1 sát thương vì <a href="/cards/detail/black-pommel">[Thanh Công Kiếm]</a> bỏ qua hiệu quả phòng cụ của mục tiêu.'
+, 1
+, 'wood-armor'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Kỹ năng của <a href="/cards/detail/gender-swords">[Thư Hùng Song Kiếm]</a> có tác dụng trước [Đằng Giáp].'
+, 1
+, 'wood-armor'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href="/cards/detail/zhuge-liang">[Gia Cát Lượng]</a> trang bị [Đằng Giáp] và không còn bài trên tay sẽ không phải nhận sát thương từ <a href="/cards/detail/fire-attack">[Hỏa Sát]</a> và <a href="/cards/detail/blaze">[Hỏa công]</a>.'
+, 4
+, 'wood-armor'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'<a href="/cards/detail/young-zhuge-liang">[Gia Cát Lượng - Ngoạ Long]</a> rất thích gây <a href="/cards/detail/blaze">[Hỏa công]</a> với những người sở hữu giáp này.'
+, 4
+, 'wood-armor'
+);
+
+-- Silver Helmet
+-- Card
+INSERT INTO public.card(name, full_name, description, image, type)
+VALUES ('silver-helmet', 'Bạch Ngân Sư Tử', 'Tỏa định kỹ. Khi bị sát thương, nếu sát thương lớn hơn so với 1 điểm, có thể loại bỏ sát thương bị dư. Khi mất đi [Bạch Ngân Sư Tử] trong khu trang bị, hồi 1 điểm sinh lực.', 'assets/img/silver-helmet.jpg', 'equipment');
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Nếu thay thế [Bạch Ngân Sư Tử] bằng 1 trang bị phòng cụ khác, người chơi sẽ ngay lập tức hồi máu.'
+, 1
+, 'silver-helmet'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Người chơi trang bị <a href="/cards/detail/black-pommel">[Thanh Công Kiếm]</a> sử dụng <a href="/cards/detail/wine">[Rượu]</a>, sau đó sử dụng <a href="/cards/detail/attack">[Sát]</a> thì có thể gây 2 sát thương.'
+, 1
+, 'silver-helmet'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Những tướng có thể bỏ trang bị rất thích hợp với giáp này, chẳng hạn như <a href="/cards/detail/xiahou-yuan">[Hạ Hầu Uyên]</a>, <a href="/cards/detail/xu-huang">[Từ Hoảng]</a>, <a href="/cards/detail/cai-wen-ji">[Thái Văn Cơ]</a>, <a href="/cards/detail/gan-ning">[Cam Ninh]</a>, <a href="/cards/detail/da-qiao">[Đại Kiều]</a>, <a href="/cards/detail/diao-chan">[Điêu Thuyền]</a> và <a href="/cards/detail/zhang-jiao">[Trương Giác]</a>.'
+, 4
+, 'silver-helmet'
+);
+
+INSERT INTO public.clarification(content, type, card_name)
+VALUES (
+'Chắc chắn bạn đã trang bị [Bạch Ngân Sư Tử] khi đối đầu với <a href="/cards/detail/zhang-jiao">[Trương Giác]</a> hoặc <a href="/cards/detail/xu-chu">[Hứa Chử]</a>.'
+, 4
+, 'silver-helmet'
+);
