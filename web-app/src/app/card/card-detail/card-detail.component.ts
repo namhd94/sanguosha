@@ -26,12 +26,16 @@ export class CardDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.card = new Card();
-    this.name = this.activatedRoute.snapshot.params.name;
     this.clarifications = [];
     this.strengths = [];
     this.weaknesses = [];
     this.combinations = [];
-    this.cardService.getCard(this.name).subscribe(card => {
+    this.name = this.activatedRoute.snapshot.params.name;
+    this.loadCardDetail(this.name);
+  }
+
+  loadCardDetail(name: string): void {
+    this.cardService.getCard(name).subscribe(card => {
       this.card = card;
       for (const i in this.card.clarifications) {
         if (Object.prototype.hasOwnProperty.call(this.card.clarifications, i)) {
