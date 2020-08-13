@@ -6,11 +6,11 @@ import {CardDetailComponent} from './card/card-detail/card-detail.component';
 import {GuideComponent} from './guide/guide.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'cards/:type', component: CardComponent},
   {path: 'cards/detail/:name', component: CardDetailComponent},
-  {path: 'guide', component: GuideComponent}
+  {path: 'cards/:type', component: CardComponent},
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'guide', component: GuideComponent},
+  {path: '', redirectTo: 'dashboard', pathMatch: 'full'}
 ];
 
 @NgModule({

@@ -19,8 +19,10 @@ export class CardListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.type = this.activatedRoute.snapshot.params.type;
-    this.reloadData(this.type);
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.type = params.get("type");
+      this.reloadData(this.type);
+    });
   }
 
   reloadData(type: string): void {

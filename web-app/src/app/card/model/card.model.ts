@@ -9,7 +9,7 @@ export class Card {
   description: string;
   image: string;
   information: Information;
-  clarifications: Clarification;
-  skills: Skill;
+  clarifications: Clarification[];
+  skills: Skill[];
   type: string;
 }
