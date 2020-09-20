@@ -23,7 +23,7 @@ public class MainController {
      *
      * @return the string
      */
-    @GetMapping(value = {"/", "/dashboard", "/cards/*", "/cards/detail/*"})
+    @GetMapping(value = {"/", "/dashboard", "/cards/*", "/cards/detail/*", "/guide"})
     public String index() {
         return INDEX_PAGE;
     }
