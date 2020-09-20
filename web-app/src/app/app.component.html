@@ -1,6 +1,6 @@
 <nz-layout class="layout">
   <nz-header>
-    <img src="assets/img/Wiki-0.png" alt="" srcset="" class="logo" />
+    <img src="assets/img/Wiki-0.png" alt="" srcset="" class="logo"/>
     <ul nz-menu nzTheme="dark" nzMode="horizontal">
       <li nz-menu-item nzMatchRouter [routerLink]="['/', 'dashboard']">
         <i nz-icon nzType="home"></i>
@@ -8,22 +8,22 @@
       </li>
       <li nz-submenu nzTitle="Tướng" nzIcon="user">
         <ul>
-          <li nz-menu-item nzMatchRouter [routerLink]="['cards', 'wei']">
+          <li nz-menu-item [routerLink]="['cards', 'wei']">
             Nguỵ
           </li>
-          <li nz-menu-item>Thục</li>
-          <li nz-menu-item>Ngô</li>
-          <li nz-menu-item>Quần hùng</li>
+          <li nz-menu-item [routerLink]="['cards', 'shu']">Thục</li>
+          <li nz-menu-item [routerLink]="['cards', 'wu']">Ngô</li>
+          <li nz-menu-item [routerLink]="['cards', 'hero']">Quần hùng</li>
         </ul>
       </li>
       <li nz-submenu nzTitle="Thẻ bài" nzIcon="tool">
         <ul>
-          <li nz-menu-item>Cơ bản</li>
-          <li nz-menu-item>Trang bị</li>
-          <li nz-menu-item>Công cụ</li>
+          <li nz-menu-item [routerLink]="['cards', 'basic']">Cơ bản</li>
+          <li nz-menu-item [routerLink]="['cards', 'equipment']">Trang bị</li>
+          <li nz-menu-item [routerLink]="['cards', 'tool']">Công cụ</li>
         </ul>
       </li>
-      <li nz-menu-item nzMatchRouter [routerLink]="['guide']">
+      <li nz-menu-item [routerLink]="['guide']">
         <i nz-icon nzType="file"></i>
         <span>Hướng dẫn</span>
       </li>
@@ -35,7 +35,9 @@
       <nz-breadcrumb-item>List</nz-breadcrumb-item>
       <nz-breadcrumb-item>App</nz-breadcrumb-item>
     </nz-breadcrumb>
-    <div class="inner-content"><router-outlet></router-outlet></div>
+    <div class="inner-content">
+      <router-outlet></router-outlet>
+    </div>
   </nz-content>
   <nz-footer>Sanguosha ©2020</nz-footer>
 </nz-layout>

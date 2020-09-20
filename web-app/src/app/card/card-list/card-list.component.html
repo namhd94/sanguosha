@@ -1,0 +1,26 @@
+<nz-list nzGrid>
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <nz-input-group [nzPrefix]="prefixTemplateSearch">
+        <input type="text" nz-input/>
+      </nz-input-group>
+      <ng-template #prefixTemplateSearch><i nz-icon nzType="search"></i></ng-template>
+    </div>
+  </div>
+  <div nz-row [nzGutter]="16" style="margin-top: 16px;">
+    <div nz-col [nzSpan]="4">
+      <nz-list-item *ngFor="let card of cards">
+        <a [routerLink]="['/cards', 'detail', card.name]">
+          <nz-card nzHoverable style="width: 140px;" [nzCover]="coverTemplate" nzSize="small">
+            <nz-card-meta
+              nzDescription="{{card.fullName}}" style="font-size: 12px;"
+            ></nz-card-meta>
+          </nz-card>
+          <ng-template #coverTemplate>
+            <img alt="{{card.fullName}}" src="{{card.image}}"/>
+          </ng-template>
+        </a>
+      </nz-list-item>
+    </div>
+  </div>
+</nz-list>

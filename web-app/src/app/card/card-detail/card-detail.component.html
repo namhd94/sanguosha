@@ -1,0 +1,161 @@
+<div nz-row>
+  <div nz-col nzSpan="24">
+    <img alt="{{card.fullName}}" src="{{card.image}}" />
+  </div>
+</div>
+<div nz-row>
+  <div nz-col nzSpan="24">
+    <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">{{card.fullName}}</h3>
+    <nz-list nzBordered>
+      <nz-list-item>
+        <nz-list-item-meta>
+          <nz-list-item-meta-title>
+            <h4>Mô tả</h4>
+          </nz-list-item-meta-title>
+          <nz-list-item-meta-description>
+            <div [innerHTML]="card.description"></div>
+          </nz-list-item-meta-description>
+        </nz-list-item-meta>
+      </nz-list-item>
+      <nz-list-item *ngIf="card?.information?.kingdom">
+        <nz-list-item-meta>
+          <nz-list-item-meta-title>
+            <h4>Nước</h4>
+          </nz-list-item-meta-title>
+          <nz-list-item-meta-description>
+            {{card.information.kingdom}}
+          </nz-list-item-meta-description>
+        </nz-list-item-meta>
+      </nz-list-item>
+      <nz-list-item *ngIf="card?.information?.health">
+        <nz-list-item-meta>
+          <nz-list-item-meta-title>
+            <h4>Máu</h4>
+          </nz-list-item-meta-title>
+          <nz-list-item-meta-description>
+            {{card.information.health}}
+          </nz-list-item-meta-description>
+        </nz-list-item-meta>
+      </nz-list-item>
+      <nz-list-item *ngIf="card?.information?.gender">
+        <nz-list-item-meta>
+          <nz-list-item-meta-title>
+            <h4>Giới tính</h4>
+          </nz-list-item-meta-title>
+          <nz-list-item-meta-description>
+            {{card.information.gender}}
+          </nz-list-item-meta-description>
+        </nz-list-item-meta>
+      </nz-list-item>
+      <nz-list-item *ngIf="card?.information?.range">
+        <nz-list-item-meta>
+          <nz-list-item-meta-title>
+            <h4>Tầm đánh</h4>
+          </nz-list-item-meta-title>
+          <nz-list-item-meta-description>
+            {{card.information.range}}
+          </nz-list-item-meta-description>
+        </nz-list-item-meta>
+      </nz-list-item>
+      <nz-list-item *ngIf="card?.information?.expansion">
+        <nz-list-item-meta>
+          <nz-list-item-meta-title>
+            <h4>Bộ bài</h4>
+          </nz-list-item-meta-title>
+          <nz-list-item-meta-description>
+            {{card.information.expansion}}
+          </nz-list-item-meta-description>
+        </nz-list-item-meta>
+      </nz-list-item>
+    </nz-list>
+  </div>
+</div>
+<div *ngIf="card?.skills">
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">Kĩ năng</h3>
+      <nz-list nzBordered>
+        <nz-list-item *ngFor="let skill of card.skills">
+          <nz-list-item-meta>
+            <nz-list-item-meta-title>
+              <h4>{{skill.name}}</h4>
+            </nz-list-item-meta-title>
+            <nz-list-item-meta-description>
+              {{skill.description}}
+            </nz-list-item-meta-description>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </nz-list>
+    </div>
+  </div>
+</div>
+<div>
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <h3 [ngStyle]="{ 'margin-bottom.px': 16, 'margin-top.px': 16 }">
+        Giải thích
+      </h3>
+      <nz-list nzBordered *ngIf="clarifications?.length > 0">
+        <nz-list-item>
+          <nz-list-item-meta>
+            <nz-list-item-meta-description>
+              <ul *ngFor="let clarification of clarifications">
+                <li>
+                  <div [innerHTML]="clarification"></div>
+                </li>
+              </ul>
+            </nz-list-item-meta-description>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </nz-list>
+      <nz-list nzBordered *ngIf="strengths?.length > 0">
+        <nz-list-item>
+          <nz-list-item-meta>
+            <nz-list-item-meta-title>
+              <h4>Điểm mạnh</h4>
+            </nz-list-item-meta-title>
+            <nz-list-item-meta-description>
+              <ul *ngFor="let strength of strengths">
+                <li>
+                  <div [innerHTML]="strengths"></div>
+                </li>
+              </ul>
+            </nz-list-item-meta-description>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </nz-list>
+      <nz-list nzBordered *ngIf="weaknesses?.length > 0">
+        <nz-list-item>
+          <nz-list-item-meta>
+            <nz-list-item-meta-title>
+              <h4>Điểm yếu</h4>
+            </nz-list-item-meta-title>
+            <nz-list-item-meta-description>
+              <ul *ngFor="let weakness of weaknesses">
+                <li>
+                  <div [innerHTML]="weakness"></div>
+                </li>
+              </ul>
+            </nz-list-item-meta-description>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </nz-list>
+      <nz-list nzBordered *ngIf="combinations?.length > 0">
+        <nz-list-item>
+          <nz-list-item-meta>
+            <nz-list-item-meta-title>
+              <h4>Kết hợp</h4>
+            </nz-list-item-meta-title>
+            <nz-list-item-meta-description>
+              <ul *ngFor="let combination of combinations">
+                <li>
+                  <div [innerHTML]="combination"></div>
+                </li>
+              </ul>
+            </nz-list-item-meta-description>
+          </nz-list-item-meta>
+        </nz-list-item>
+      </nz-list>
+    </div>
+  </div>
+</div>

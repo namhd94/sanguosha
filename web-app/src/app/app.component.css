@@ -4,13 +4,13 @@
 
 .logo {
   height: 31px;
-  margin-top: 16px;
+  margin: 16px 3% 0px 0px;
   float: left;
 }
 
 nz-header {
   position: fixed;
-  width: 1170px;
+  width: 100%;
   z-index: 9999;
 }
 

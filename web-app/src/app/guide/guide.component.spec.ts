@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GuideComponent } from './guide.component';
+import {GuideComponent} from './guide.component';
 
 describe('GuideComponent', () => {
   let component: GuideComponent;
@@ -8,9 +8,9 @@ describe('GuideComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GuideComponent ]
+      declarations: [GuideComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
