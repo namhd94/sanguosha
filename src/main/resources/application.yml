@@ -3,9 +3,9 @@ spring:
 # Database
   datasource: 
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://ec2-54-160-120-28.compute-1.amazonaws.com:5432/daocestdfvdtkd
-    username: jmhedauvljojik
-    password: 17872e71c3df21bf5200ad96eb27b7aac404c394d71e649b2ecd9e858a47ebff
+    url: jdbc:postgresql://${DATABASE_HOST}:5432/daocestdfvdtkd
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
 # JPA properties
   jpa:
     properties:
