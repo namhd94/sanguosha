@@ -1,3 +1,4 @@
+import { FilterPipe } from './pipe/filter.pipe';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
@@ -19,12 +20,16 @@ registerLocaleData(en);
 
 @NgModule({
   declarations: [
+    // Component
     AppComponent,
     DashboardComponent,
     CardDetailComponent,
     CardListComponent,
     GuideComponent,
-    CardComponent
+    CardComponent,
+
+    // Pipe
+    FilterPipe
   ],
   imports: [
     BrowserModule,

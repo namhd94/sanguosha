@@ -12,6 +12,7 @@ export class CardListComponent implements OnInit {
 
   cards: Card[];
   type: string;
+  searchText = '';
   constructor(
     private cardService: CardService,
     private activatedRoute: ActivatedRoute
@@ -20,7 +21,7 @@ export class CardListComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params => {
-      this.type = params.get("type");
+      this.type = params.get('type');
       this.reloadData(this.type);
     });
   }
