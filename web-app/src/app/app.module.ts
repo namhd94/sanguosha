@@ -14,7 +14,6 @@ import {CardListComponent} from './card/card-list/card-list.component';
 import {GuideComponent} from './guide/guide.component';
 import {AppRoutingModule} from './app-routing.module';
 import {CardComponent} from './card/card.component';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 registerLocaleData(en);
 
@@ -25,8 +24,7 @@ registerLocaleData(en);
     CardDetailComponent,
     CardListComponent,
     GuideComponent,
-    CardComponent,
-    BreadcrumbComponent
+    CardComponent
   ],
   imports: [
     BrowserModule,
