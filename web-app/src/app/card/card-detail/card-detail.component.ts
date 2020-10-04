@@ -1,7 +1,6 @@
-import { Clarification } from './../model/clarification.model';
 import { CardSettings } from './../card-settings';
 import { CardService } from './../card.service';
-import { Card } from './../model/card.model';
+import { Card } from './../../model/card.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 

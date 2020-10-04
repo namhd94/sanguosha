@@ -1,5 +1,5 @@
-import {Clarification} from './clarification.model';
-import {Skill} from './skill.model';
+import { Clarification } from './clarification.model';
+import { Skill } from './skill.model';
 import { Information } from './information.model';
 
 export class Card {

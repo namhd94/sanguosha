@@ -1,16 +1,55 @@
-import {CardComponent} from './card/card.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {CardDetailComponent} from './card/card-detail/card-detail.component';
-import {GuideComponent} from './guide/guide.component';
+import { CardComponent } from './card/card.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { CardDetailComponent } from './card/card-detail/card-detail.component';
+import { GuideComponent } from './guide/guide.component';
 
 const routes: Routes = [
-  {path: 'cards/detail/:name', component: CardDetailComponent},
-  {path: 'cards/:type', component: CardComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'guide', component: GuideComponent},
-  {path: '', redirectTo: 'dashboard', pathMatch: 'full'}
+  {
+    path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full',
+    data: {
+      breadcrumb: 'Dashboard'
+    }
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    data: {
+      breadcrumb: 'Dashboard'
+    }
+  },
+  {
+    path: 'guide',
+    component: GuideComponent,
+    data: {
+      breadcrumb: 'Guide'
+    }
+  },
+  {
+    path: 'cards',
+    data: {
+      breadcrumb: 'Cards'
+    },
+    children: [
+      {
+        path: ':type',
+        component: CardComponent,
+        data: {
+          breadcrumb: ''
+        }
+      },
+      {
+        path: 'detail/:name',
+        component: CardDetailComponent,
+        data: {
+          breadcrumb: ''
+        }
+      }
+    ]
+  },
 ];
 
 @NgModule({
