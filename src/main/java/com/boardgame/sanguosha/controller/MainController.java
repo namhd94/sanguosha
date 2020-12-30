@@ -1,5 +1,7 @@
 package com.boardgame.sanguosha.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.boardgame.sanguosha.dto.webhook.Event;
+import com.boardgame.sanguosha.dto.webhook.FormField;
 
 /**
  * <p>
@@ -50,7 +53,10 @@ public class MainController {
             final String accessKey, @RequestBody
             final Event eventWebHook) {
         LOGGER.info("We're here - process street");
-        LOGGER.info(eventWebHook.toString());
+        final List<FormField> formField = eventWebHook.getData().getFormFields();
+        for(FormField field: formField) {
+            System.out.println(field);
+        }
         return INDEX_PAGE;
     }
 }
