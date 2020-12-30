@@ -1,7 +1,14 @@
 package com.boardgame.sanguosha.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.boardgame.sanguosha.dto.webhook.Event;
 
 /**
  * <p>
@@ -14,6 +21,9 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Controller
 public class MainController {
+    
+    /** Logging property. */
+    private static final Logger LOGGER = LoggerFactory.getLogger(MainController.class);
 
     /** The Constant INDEX_PAGE. */
     private static final String INDEX_PAGE = "forward:/index.html";
@@ -25,6 +35,22 @@ public class MainController {
      */
     @GetMapping(value = {"/", "/dashboard", "/cards/*", "/cards/detail/*", "/guide"})
     public String index() {
+        return INDEX_PAGE;
+    }
+    
+    /**
+     * Adds the inspection result.
+     *
+     * @param eventWebHook the event web hook
+     * @return the response entity
+     */
+    @PostMapping(value = "/inspection/add")
+    public String addInspectionResult(
+            @RequestParam("accessKey")
+            final String accessKey, @RequestBody
+            final Event eventWebHook) {
+        LOGGER.info("We're here - process street");
+        LOGGER.info(eventWebHook.toString());
         return INDEX_PAGE;
     }
 }
